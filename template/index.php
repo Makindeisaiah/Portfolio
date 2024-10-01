@@ -68,8 +68,8 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center">
         <div class="col-12 col-lg-8 home-content text-center">
-          <h1 class="home-name">Makinde <span>Isaiah</span></h1>
-          <h4 class="cd-headline clip home-headline">I’m a <span class="cd-words-wrapper single-headline"><b class="is-visible">Front-End Developer</b><b>Freelancer</b></span></h4>
+          <h1 class="home-name">Makinde <span>Isaiah O.</span></h1>
+          <h4 class="cd-headline clip home-headline">I’m a <span class="cd-words-wrapper single-headline"><b class="is-visible">Full-Stack Developer</b><b>Freelancer</b></span></h4>
         </div>
       </div>
     </div>
@@ -114,7 +114,7 @@
                 <div class="col-12 col-lg-7 info-content">
                   <div class="content-block">
                     <h2 class="content-subtitle">Who am i?</h2>
-                    <h6 class="content-title">I'm Makinde Isaiah</h6>
+                    <h6 class="content-title">I'm Makinde Isaiah Oluwatoyin</h6>
                     <div class="content-description">
                       <p>I am a freelancer based in the Lagos, Nigeria. I spend my days with my hands in many different areas of web development from front end programming (HTML, CSS, Bootstrap and Javascript) to back end engineering (PHP and SQL).</p>
                     </div>
