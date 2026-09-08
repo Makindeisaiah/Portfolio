@@ -3,6 +3,7 @@ import { WebsiteProject, UIUXProject, SkillCategory, ProcessStep, ServiceItem } 
 export const PERSONAL_INFO = {
   name: 'Isaiah Oluwatoyin',
   shortName: 'Isaiah',
+  avatarUrl: '/images/profile/portrait.png',
   positioning: 'Product Designer & Digital Product Builder',
   supportingStatement:
     'I design digital experiences and build products that turn ideas into meaningful, functional experiences.',
@@ -45,6 +46,8 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     tools: ['Figma', 'React', 'Tailwind CSS', 'Motion'],
     client: 'OMONY Atelier Studios (Lagos)',
     liveUrl: 'https://omonyatelier.com',
+    thumbnailUrl: '/images/projects/omony-atelier-studios/hero.png',
+    heroImage: '/images/projects/omony-atelier-studios/hero.png',
     accentColor: '#8C7862', // Warm architectural sand
     challenge:
       'OMONY Atelier Studios needed an editorial web experience that could convey architectural restraint, spatial harmony, and artisanal material craftsmanship without slow loading times or cluttered navigation.',
@@ -111,6 +114,8 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     tools: ['Figma', 'HTML5', 'Tailwind CSS', 'JavaScript'],
     client: 'Validreams Property Management',
     liveUrl: 'https://validreams.com',
+    thumbnailUrl: '/images/projects/validreams-property-management/hero.png',
+    heroImage: '/images/projects/validreams-property-management/hero.png',
     accentColor: '#1E4E5F', // Deep property teal
     challenge:
       'Property owners struggled to quickly understand fee tiers, tenant screening guarantees, and maintenance workflows on the previous website, resulting in high bounce rates.',
@@ -177,6 +182,8 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     tools: ['Figma', 'WordPress', 'PHP', 'CSS3', 'REST API'],
     client: 'KoikiMedia International',
     liveUrl: 'https://koikimedia.com',
+    thumbnailUrl: '/images/projects/koikimedia-international-news/hero.png',
+    heroImage: '/images/projects/koikimedia-international-news/hero.png',
     accentColor: '#B91C1C', // Editorial news crimson
     challenge:
       'An international news agency required an editorial architecture capable of handling heavy daily article traffic, live broadcast video feeds, and breaking news banners without crashing under spike loads.',
@@ -245,6 +252,8 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     timeline: '10 Weeks (Research to Prototype & Design System)',
     platforms: ['iOS App', 'Android App', 'Responsive Web Portal'],
     clientOrContext: 'Private Aviation Charter Venture',
+    thumbnailUrl: '/images/projects/pacejet/hero.png',
+    heroImage: '/images/projects/pacejet/hero.png',
     accentColor: '#0F172A', // Deep cockpit navy
     problem:
       'Booking private air charters has traditionally required archaic back-and-forth broker phone calls, opaque pricing structures, and confusing aircraft categorization. High-value clients and executive assistants wasted hours obtaining empty-leg quotes and coordinating tarmac itineraries.',
@@ -425,6 +434,8 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     timeline: '14 Weeks (Multi-Platform Ecosystem)',
     platforms: ['Attendee iOS/Android App', 'Attendee Web Portal', 'Organizer Analytics Dashboard', 'Staff Gate Scanner App'],
     clientOrContext: 'Live Entertainment & Festival Ecosystem',
+    thumbnailUrl: '/images/projects/ticketa/hero.png',
+    heroImage: '/images/projects/ticketa/hero.png',
     accentColor: '#4F46E5', // Indigo event energy
     problem:
       'Event ecosystems suffer from fragmented platforms: attendees deal with fraudulent ticket resales and agonizing entry queues; organizers struggle with scattered sales dashboards; and gate staff are forced to use unreliable offline scanners that fail under spotty stadium Wi-Fi.',
@@ -605,6 +616,8 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     timeline: '8 Weeks',
     platforms: ['iOS App', 'Android App'],
     clientOrContext: 'Emerging Markets Digital Banking Venture',
+    thumbnailUrl: '/images/projects/magicpay/hero.png',
+    heroImage: '/images/projects/magicpay/hero.png',
     accentColor: '#059669', // Emerald financial growth
     problem:
       'Everyday digital financial services in emerging markets are often riddled with hidden transaction fees, multi-step authentication failures, and cluttered navigation grids that overwhelm users trying to complete quick airtime, bill, or money transfers.',
@@ -785,6 +798,8 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     timeline: '9 Weeks',
     platforms: ['Merchant Web Portal', 'Mobile Checkout SDK', 'Customer Payment App'],
     clientOrContext: 'B2B & B2C Digital Payments Infrastructure',
+    thumbnailUrl: '/images/projects/zibapay/hero.png',
+    heroImage: '/images/projects/zibapay/hero.png',
     accentColor: '#2563EB', // Electric royal blue
     problem:
       'Modern businesses attempting to accept payments across online stores, physical POS terminals, and international client invoices face fragmented reconciliation, delayed settlement payouts, and confusing developer documentation.',

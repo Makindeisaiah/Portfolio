@@ -406,8 +406,35 @@ export const FigmaAssetManager: React.FC = () => {
                               {slot.folderPath}{slot.recommendedFilename}
                             </p>
 
-                            <div className="flex items-center gap-2 mt-3">
-                              {hasCustom ? (
+                            <div className="flex flex-wrap items-center gap-2 mt-3">
+                              {/* Direct file input for this slot */}
+                              <input
+                                id={`slot-file-input-${slot.id}`}
+                                type="file"
+                                accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                                className="hidden"
+                                onChange={async (e) => {
+                                  if (e.target.files && e.target.files.length > 0) {
+                                    const newAssets = await uploadFiles(e.target.files);
+                                    if (newAssets.length > 0) {
+                                      assignAssetToSlot(slot.id, newAssets[0].dataUrl);
+                                    }
+                                  }
+                                }}
+                              />
+
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  document.getElementById(`slot-file-input-${slot.id}`)?.click();
+                                }}
+                                className="inline-flex items-center gap-1 text-[11px] font-semibold text-neutral-800 hover:text-neutral-950 bg-white border border-neutral-300 px-2.5 py-1 rounded-md shadow-2xs hover:bg-neutral-50 transition-colors cursor-pointer"
+                              >
+                                <UploadCloud className="w-3 h-3 text-emerald-600" />
+                                <span>{hasCustom ? 'Replace Image' : 'Upload Image'}</span>
+                              </button>
+
+                              {hasCustom && (
                                 <>
                                   <button
                                     type="button"
@@ -416,7 +443,7 @@ export const FigmaAssetManager: React.FC = () => {
                                     title="Download image formatted for folder"
                                   >
                                     <Download className="w-3 h-3" />
-                                    <span>Download for Folder</span>
+                                    <span>Download</span>
                                   </button>
 
                                   <button
@@ -424,13 +451,9 @@ export const FigmaAssetManager: React.FC = () => {
                                     onClick={() => removeAssignedAsset(slot.id)}
                                     className="text-[11px] text-red-600 hover:text-red-700 hover:underline px-1 py-1"
                                   >
-                                    Revert to Mockup
+                                    Reset
                                   </button>
                                 </>
-                              ) : (
-                                <span className="text-[11px] text-neutral-400 italic">
-                                  Drag image onto this card on page
-                                </span>
                               )}
                             </div>
                           </div>

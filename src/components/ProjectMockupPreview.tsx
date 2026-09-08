@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Plane, 
   Ticket, 
@@ -50,9 +50,19 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
     setTrayOpen 
   } = useAssets();
 
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
   const customImage = getSlotImage(projectId);
   const activeImage = customImage || imageUrl;
+
+  const handleFilePickerChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const newAssets = await uploadFiles(e.target.files);
+      if (newAssets.length > 0) {
+        assignAssetToSlot(projectId, newAssets[0].dataUrl);
+      }
+    }
+  };
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -156,6 +166,31 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
               Live Asset
             </div>
           )}
+        </div>
+
+        {/* Hidden File Picker */}
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/png,image/jpeg,image/webp,image/svg+xml"
+          onChange={handleFilePickerChange}
+          className="hidden"
+        />
+
+        {/* Hover Upload / Change Button */}
+        <div className="absolute bottom-3 left-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              fileInputRef.current?.click();
+            }}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-900/90 hover:bg-neutral-900 text-white text-[11px] font-semibold shadow-lg backdrop-blur-xs transition-colors cursor-pointer border border-neutral-700/50"
+          >
+            <UploadCloud className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Upload / Change Image</span>
+          </button>
         </div>
       </div>
     );
@@ -557,23 +592,30 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
         </div>
       )}
 
-      {/* Discrete label indicating the placeholder can be replaced by real screenshots */}
-      {showDetails && (
-        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              setTrayOpen(true);
-            }}
-            className="flex items-center gap-1.5 bg-black/80 hover:bg-black backdrop-blur-md text-white/90 hover:text-white text-[9px] font-mono px-2.5 py-1 rounded-full border border-white/10 shadow-sm transition-colors cursor-pointer"
-          >
-            <UploadCloud className="w-3 h-3 text-emerald-400" />
-            <span>Drop Figma Image or Click</span>
-          </button>
-        </div>
-      )}
+      {/* Hidden File Picker */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/png,image/jpeg,image/webp,image/svg+xml"
+        onChange={handleFilePickerChange}
+        className="hidden"
+      />
+
+      {/* Discrete label and upload buttons */}
+      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20 flex items-center gap-1.5">
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            fileInputRef.current?.click();
+          }}
+          className="flex items-center gap-1.5 bg-black/80 hover:bg-black backdrop-blur-md text-white/90 hover:text-white text-[9px] font-mono px-2.5 py-1 rounded-full border border-white/10 shadow-sm transition-colors cursor-pointer"
+        >
+          <UploadCloud className="w-3 h-3 text-emerald-400" />
+          <span>Upload Image</span>
+        </button>
+      </div>
     </div>
   );
 };
@@ -588,8 +630,18 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
     setTrayOpen 
   } = useAssets();
 
+  const profileFileInputRef = useRef<HTMLInputElement>(null);
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
-  const profileImage = getSlotImage('profile-portrait');
+  const profileImage = getSlotImage('profile-portrait') || '/images/profile/portrait.png';
+
+  const handleProfileFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const newAssets = await uploadFiles(e.target.files);
+      if (newAssets.length > 0) {
+        assignAssetToSlot('profile-portrait', newAssets[0].dataUrl);
+      }
+    }
+  };
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -663,6 +715,31 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
             <span>Reset</span>
           </button>
         </div>
+
+        {/* Hidden File Picker */}
+        <input
+          ref={profileFileInputRef}
+          type="file"
+          accept="image/png,image/jpeg,image/webp,image/svg+xml"
+          onChange={handleProfileFileChange}
+          className="hidden"
+        />
+
+        {/* Hover Upload / Change Button */}
+        <div className="absolute bottom-3 left-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              profileFileInputRef.current?.click();
+            }}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-900/90 hover:bg-neutral-900 text-white text-[11px] font-semibold shadow-lg backdrop-blur-xs transition-colors cursor-pointer border border-neutral-700/50"
+          >
+            <UploadCloud className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Upload / Change Photo</span>
+          </button>
+        </div>
       </div>
     );
   }
@@ -677,6 +754,15 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
       {/* Decorative architectural grid lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:24px_24px] opacity-30 pointer-events-none" />
 
+      {/* Hidden File Picker */}
+      <input
+        ref={profileFileInputRef}
+        type="file"
+        accept="image/png,image/jpeg,image/webp,image/svg+xml"
+        onChange={handleProfileFileChange}
+        className="hidden"
+      />
+
       {/* Monogram emblem */}
       <div className="relative z-10 w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-neutral-900 text-white flex flex-col items-center justify-center shadow-lg mb-6 border border-neutral-800">
         <span className="text-3xl sm:text-4xl font-extrabold tracking-tighter">IO</span>
@@ -687,14 +773,24 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
         <h4 className="text-base font-bold text-neutral-900 tracking-tight">Isaiah Oluwatoyin</h4>
         <p className="text-xs text-neutral-500 mt-0.5">Product Designer & Digital Product Builder</p>
         
-        <button
-          type="button"
-          onClick={() => setTrayOpen(true)}
-          className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 hover:bg-white border border-neutral-200/80 text-[10px] font-mono text-neutral-600 hover:text-neutral-900 shadow-2xs transition-colors cursor-pointer"
-        >
-          <UploadCloud className="w-3 h-3 text-neutral-500" />
-          <span>Drag & Drop Portrait Here</span>
-        </button>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+          <button
+            type="button"
+            onClick={() => profileFileInputRef.current?.click()}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-900 text-white text-[11px] font-semibold hover:bg-neutral-800 shadow-xs transition-colors cursor-pointer"
+          >
+            <UploadCloud className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Upload Photo</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setTrayOpen(true)}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 hover:bg-white border border-neutral-200/80 text-[11px] font-mono text-neutral-600 hover:text-neutral-900 shadow-2xs transition-colors cursor-pointer"
+          >
+            <span>Figma Shelf</span>
+          </button>
+        </div>
       </div>
 
       {/* Drop overlay */}
