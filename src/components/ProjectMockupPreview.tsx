@@ -265,6 +265,7 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
         );
 
       case 'zibapay':
+      case 'ziba-innovation':
         return (
           <div className="w-full h-full bg-[#0C1527] text-white p-5 flex flex-col justify-between select-none relative overflow-hidden">
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
@@ -274,10 +275,10 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
                 <div className="w-6 h-6 rounded-md bg-blue-600/30 border border-blue-500/40 flex items-center justify-center">
                   <CreditCard className="w-3.5 h-3.5 text-blue-400" />
                 </div>
-                <span className="text-xs font-semibold tracking-wider uppercase text-blue-200">ZIBAPAY PLATFORM</span>
+                <span className="text-xs font-semibold tracking-wider uppercase text-blue-200">ZIBA INNOVATION</span>
               </div>
               <span className="text-[10px] font-mono bg-blue-950 text-blue-300 px-2 py-0.5 rounded border border-blue-800/40">
-                API RAILS READY
+                LIVE PLATFORM
               </span>
             </div>
 
@@ -307,7 +308,7 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
 
             <div className="pt-2 z-10 flex items-center justify-between text-[10px] text-neutral-400 border-t border-blue-950">
               <span>Merchant Back-Office & Consumer Checkout</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-blue-400" />
+              <span className="text-blue-300 font-mono">zibainnovative.vercel.app</span>
             </div>
           </div>
         );
@@ -354,7 +355,7 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
 
             <div className="pt-2 z-10 flex items-center justify-between text-[10px] text-stone-500 border-t border-stone-800/80">
               <span>Editorial Web Experience • Sub-second load</span>
-              <span className="text-[#C2B29F] font-mono">omonyatelier.com</span>
+              <span className="text-[#C2B29F] font-mono">omonyatelierstudios.vercel.app</span>
             </div>
           </div>
         );
@@ -399,7 +400,7 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
 
             <div className="pt-2 z-10 flex items-center justify-between text-[10px] text-neutral-400 border-t border-teal-950">
               <span>Conversion-focused corporate website</span>
-              <span className="text-teal-300 font-mono">validreams.com</span>
+              <span className="text-teal-300 font-mono">validreams-enterprise-limited.vercel.app</span>
             </div>
           </div>
         );

@@ -157,7 +157,7 @@ export const HomePage: React.FC = () => {
                   <span>Explore Websites</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
-                <span className="text-xs text-neutral-400 font-mono">3 Selected Projects</span>
+                <span className="text-xs text-neutral-400 font-mono">{WEBSITE_PROJECTS.length} Selected Projects</span>
               </div>
             </div>
 
@@ -201,7 +201,7 @@ export const HomePage: React.FC = () => {
                   <span>Explore UI/UX</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
-                <span className="text-xs text-neutral-400 font-mono">4 Case Studies</span>
+                <span className="text-xs text-neutral-400 font-mono">{UIUX_PROJECTS.length} Case Studies</span>
               </div>
             </div>
           </div>

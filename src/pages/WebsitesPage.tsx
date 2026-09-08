@@ -8,7 +8,7 @@ import { ContactSection } from '../components/ContactSection';
 export const WebsitesPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  const categories = ['All', 'Interior Architecture & Design', 'Property Management', 'News & Media'];
+  const categories = ['All', 'Interior Architecture & Design', 'Property Management', 'Digital Innovation & Fintech', 'News & Media'];
 
   const filteredProjects = selectedCategory === 'All'
     ? WEBSITE_PROJECTS

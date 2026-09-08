@@ -77,14 +77,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, type }) => {
           <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
         </Link>
 
-        {/* External live link for websites if available */}
-        {isWebsite && website?.liveUrl && (
+        {/* External live link if available */}
+        {(isWebsite ? website?.liveUrl : uiux?.liveUrl) && (
           <a
-            href={website.liveUrl}
+            href={isWebsite ? website?.liveUrl : uiux?.liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="text-[11px] font-mono text-neutral-400 hover:text-neutral-800 transition-colors inline-flex items-center gap-1"
-            title="Visit live site"
+            className="text-[11px] font-mono text-neutral-500 hover:text-neutral-900 transition-colors inline-flex items-center gap-1 font-medium bg-neutral-100 hover:bg-neutral-200/80 px-2.5 py-1 rounded-full border border-neutral-200/80"
+            title="Visit live website"
           >
             <span>Live site</span>
             <ArrowUpRight className="w-3 h-3" />

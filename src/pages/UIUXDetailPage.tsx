@@ -66,16 +66,30 @@ export const UIUXDetailPage: React.FC = () => {
             {project.description}
           </p>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 pt-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 rounded-full text-xs font-medium text-neutral-700 bg-white border border-neutral-200"
+          {/* Tags & Live Link */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full text-xs font-medium text-neutral-700 bg-white border border-neutral-200"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-neutral-900 hover:bg-neutral-800 transition-all shadow-xs"
               >
-                {tag}
-              </span>
-            ))}
+                <span>Visit Live Website</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
 
           {/* Hero Visual Mockup */}

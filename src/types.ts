@@ -46,6 +46,7 @@ export interface UIUXProject {
   platforms: string[];
   clientOrContext: string;
   accentColor: string;
+  liveUrl?: string;
   heroImage?: string;
   thumbnailUrl?: string;
   // 18 Case study sections data

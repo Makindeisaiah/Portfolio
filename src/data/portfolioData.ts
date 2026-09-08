@@ -45,7 +45,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     role: 'Lead Designer & Frontend Developer',
     tools: ['Figma', 'React', 'Tailwind CSS', 'Motion'],
     client: 'OMONY Atelier Studios (Lagos)',
-    liveUrl: 'https://omonyatelier.com',
+    liveUrl: 'https://omonyatelierstudios.vercel.app/',
     thumbnailUrl: '/images/projects/omony-atelier-studios/hero.jpg',
     heroImage: '/images/projects/omony-atelier-studios/hero.jpg',
     accentColor: '#8C7862', // Warm architectural sand
@@ -113,7 +113,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     role: 'UI/UX Designer & Web Developer',
     tools: ['Figma', 'HTML5', 'Tailwind CSS', 'JavaScript'],
     client: 'Validreams Property Management',
-    liveUrl: 'https://validreams.com',
+    liveUrl: 'https://validreams-enterprise-limited.vercel.app/',
     thumbnailUrl: '/images/projects/validreams-property-management/hero.jpg',
     heroImage: '/images/projects/validreams-property-management/hero.jpg',
     accentColor: '#1E4E5F', // Deep property teal
@@ -236,6 +236,74 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     finalWebsiteOverview:
       'KoikiMedia transformed its global digital readership, handling millions of monthly page views with zero downtime and a significant rise in reader retention.',
     technologies: ['WordPress Engine', 'Custom PHP', 'Tailwind CSS', 'REST API', 'Cloudflare'],
+  },
+  {
+    id: 'ziba-innovation',
+    title: 'Ziba Innovation',
+    category: 'Digital Innovation & Fintech',
+    tagline: 'Modern digital web presence for enterprise payments & innovation',
+    description:
+      'A cutting-edge digital presence designed for Ziba Innovation, showcasing modern financial infrastructure, payment services, and business solutions.',
+    tags: ['Website Design', 'Fintech', 'Development'],
+    year: '2024',
+    role: 'Product Designer & Frontend Developer',
+    tools: ['Figma', 'React', 'Tailwind CSS', 'TypeScript'],
+    client: 'Ziba Innovation',
+    liveUrl: 'https://zibainnovative.vercel.app/',
+    thumbnailUrl: '/images/projects/ziba-innovation/hero.jpg',
+    heroImage: '/images/projects/ziba-innovation/hero.jpg',
+    accentColor: '#2563EB', // Electric royal blue
+    challenge:
+      'Ziba Innovation required a credible, high-converting corporate web presence to introduce its next-generation payment infrastructure, API capabilities, and merchant solutions to enterprise partners and fast-growing businesses.',
+    goals: [
+      'Communicate bank-grade security, instantaneous settlement speeds, and simple API integration',
+      'Build an interactive solutions overview for B2B merchants, fintech developers, and enterprises',
+      'Optimize page load performance and conversion rates across mobile and desktop devices',
+    ],
+    designDirection: {
+      typography: 'Sharp modern sans-serif typography with high-contrast data callouts and clean technical hierarchy.',
+      colorPalette: [
+        { name: 'Dark Vault', hex: '#0C1527', role: 'Primary Dark Canvas' },
+        { name: 'Electric Royal', hex: '#2563EB', role: 'Brand & Active Highlights' },
+        { name: 'Pure White', hex: '#FFFFFF', role: 'Headlines & Card Surfaces' },
+      ],
+      editorialApproach: 'High-tech architectural cards, real-time volume metrics, and interactive checkout SDK previews.',
+    },
+    keyScreens: [
+      {
+        title: 'Platform Infrastructure Hero',
+        description: 'Commanding hero section introducing global payment rails and enterprise conversion benchmarks.',
+        type: 'desktop',
+      },
+      {
+        title: 'Developer API Rails & SDK Tour',
+        description: 'Interactive code snippet tour demonstrating one-line integration for payment checkouts.',
+        type: 'desktop',
+      },
+      {
+        title: 'Merchant Analytics & Back-Office Overview',
+        description: 'Real-time settlement reporting interface showing gross volume and instant automated payouts.',
+        type: 'tablet',
+      },
+      {
+        title: 'Mobile Biometric Checkout Demo',
+        description: 'One-tap biometric card and transfer authorization flow for consumer payments.',
+        type: 'mobile',
+      },
+    ],
+    responsiveFeatures: [
+      'Interactive volume calculator that dynamically scales fee tiers based on transaction turnover',
+      'Live ping latency indicator comparing gateway transaction speeds against industry averages',
+      'Fluid mobile navigation with instant documentation search and developer portal links',
+    ],
+    developmentHighlights: [
+      'Engineered with React, TypeScript, and modern CSS for lightning-fast sub-second loading',
+      'Fully responsive fluid layouts tested across all viewport breakpoints from mobile to ultra-wide',
+      'Production deployment and asset caching hosted on Vercel infrastructure',
+    ],
+    finalWebsiteOverview:
+      'The live digital web presence for Ziba Innovation elevated brand trust among corporate partners and established a cohesive gateway for merchant acquisition.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Vercel'],
   },
 ];
 
@@ -788,8 +856,8 @@ export const UIUX_PROJECTS: UIUXProject[] = [
   },
   {
     id: 'zibapay',
-    title: 'ZibaPay',
-    subtitle: 'Digital Payment Platform',
+    title: 'Ziba Innovation',
+    subtitle: 'Digital Innovation & Payment Platform',
     description:
       'A digital payment experience designed to support modern financial transactions and business services.',
     tags: ['Product Design', 'Fintech', 'Payments'],
@@ -797,7 +865,8 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     role: 'Product Designer & UX Researcher',
     timeline: '9 Weeks',
     platforms: ['Merchant Web Portal', 'Mobile Checkout SDK', 'Customer Payment App'],
-    clientOrContext: 'B2B & B2C Digital Payments Infrastructure',
+    clientOrContext: 'Ziba Innovation / Digital Payments Infrastructure',
+    liveUrl: 'https://zibainnovative.vercel.app/',
     thumbnailUrl: '/images/projects/zibapay/hero.jpg',
     heroImage: '/images/projects/zibapay/hero.jpg',
     accentColor: '#2563EB', // Electric royal blue
