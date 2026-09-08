@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   Plane, 
   Ticket, 
@@ -54,6 +54,26 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
   const customImage = getSlotImage(projectId);
   const activeImage = customImage || imageUrl;
+
+  const [currentSrc, setCurrentSrc] = useState<string>(activeImage || '');
+  const [imgError, setImgError] = useState<boolean>(false);
+
+  useEffect(() => {
+    setCurrentSrc(activeImage || '');
+    setImgError(false);
+  }, [activeImage]);
+
+  const handleImageError = () => {
+    // If the image failed with .png, try .jpg
+    if (currentSrc.endsWith('.png')) {
+      setCurrentSrc(currentSrc.replace(/\.png$/, '.jpg'));
+    } else if (currentSrc.endsWith('.jpg')) {
+      // If .jpg failed, try .png
+      setCurrentSrc(currentSrc.replace(/\.jpg$/, '.png'));
+    } else {
+      setImgError(true);
+    }
+  };
 
   const handleFilePickerChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -112,7 +132,7 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
   };
 
   // If a real image or custom uploaded Figma image exists, render it cleanly
-  if (activeImage && activeImage.trim().length > 0) {
+  if (!imgError && currentSrc && currentSrc.trim().length > 0) {
     return (
       <div 
         onDragOver={handleDragOver}
@@ -121,9 +141,10 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
         className={`group relative overflow-hidden rounded-xl border border-neutral-200/90 bg-neutral-100 ${getAspectClass()} ${className}`}
       >
         <img
-          src={activeImage}
+          src={currentSrc}
           alt={altText}
           loading="lazy"
+          onError={handleImageError}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
@@ -632,7 +653,25 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
 
   const profileFileInputRef = useRef<HTMLInputElement>(null);
   const [isDragOver, setIsDragOver] = useState<boolean>(false);
-  const profileImage = getSlotImage('profile-portrait') || '/images/profile/portrait.png';
+  const profileImage = getSlotImage('profile-portrait') || '/images/profile/portrait.jpg';
+
+  const [portraitSrc, setPortraitSrc] = useState<string>(profileImage);
+  const [portraitError, setPortraitError] = useState<boolean>(false);
+
+  useEffect(() => {
+    setPortraitSrc(profileImage);
+    setPortraitError(false);
+  }, [profileImage]);
+
+  const handlePortraitError = () => {
+    if (portraitSrc.endsWith('.png')) {
+      setPortraitSrc(portraitSrc.replace(/\.png$/, '.jpg'));
+    } else if (portraitSrc.endsWith('.jpg')) {
+      setPortraitSrc(portraitSrc.replace(/\.jpg$/, '.png'));
+    } else {
+      setPortraitError(true);
+    }
+  };
 
   const handleProfileFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -674,7 +713,7 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
     }
   };
 
-  if (profileImage && profileImage.trim().length > 0) {
+  if (!portraitError && portraitSrc && portraitSrc.trim().length > 0) {
     return (
       <div
         onDragOver={handleDragOver}
@@ -683,8 +722,9 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
         className={`group relative overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 shadow-sm ${className}`}
       >
         <img
-          src={profileImage}
+          src={portraitSrc}
           alt="Isaiah Oluwatoyin"
+          onError={handlePortraitError}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
 
