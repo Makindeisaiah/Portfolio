@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AssetProvider } from './context/AssetContext';
+import { FigmaAssetManager } from './components/FigmaAssetManager';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -13,24 +15,28 @@ import { ContactPage } from './pages/ContactPage';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-[#FAFAFA] text-neutral-900 selection:bg-neutral-900 selection:text-white">
-        <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/websites" element={<WebsitesPage />} />
-            <Route path="/websites/:id" element={<WebsiteDetailPage />} />
-            <Route path="/ui-ux" element={<UIUXPage />} />
-            <Route path="/ui-ux/:id" element={<UIUXDetailPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<HomePage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <AssetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="flex flex-col min-h-screen bg-[#FAFAFA] text-neutral-900 selection:bg-neutral-900 selection:text-white">
+          <Navbar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/websites" element={<WebsitesPage />} />
+              <Route path="/websites/:id" element={<WebsiteDetailPage />} />
+              <Route path="/ui-ux" element={<UIUXPage />} />
+              <Route path="/ui-ux/:id" element={<UIUXDetailPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<HomePage />} />
+            </Routes>
+          </main>
+          <Footer />
+          {/* Interactive Figma Asset & Drag-and-Drop Manager */}
+          <FigmaAssetManager />
+        </div>
+      </BrowserRouter>
+    </AssetProvider>
   );
 }
