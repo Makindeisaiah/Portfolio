@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, UploadCloud } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useAssets } from '../context/AssetContext';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { setTrayOpen, assignedSlots } = useAssets();
-  const assignedCount = Object.keys(assignedSlots).length;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,19 +78,6 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-3">
-            <button
-              type="button"
-              onClick={() => setTrayOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-neutral-700 bg-neutral-100 hover:bg-neutral-200/80 transition-colors border border-neutral-200/60"
-              title="Figma design file & asset manager"
-            >
-              <UploadCloud className="w-3.5 h-3.5 text-neutral-600" />
-              <span>Figma Assets</span>
-              {assignedCount > 0 && (
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              )}
-            </button>
-
             <Link
               to="/contact"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold tracking-wide text-white bg-neutral-900 hover:bg-neutral-800 transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-[0.98]"
@@ -140,24 +124,7 @@ export const Navbar: React.FC = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-neutral-200/80 space-y-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    setTrayOpen(true);
-                  }}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl text-xs font-semibold text-neutral-800 bg-neutral-100 hover:bg-neutral-200 transition-colors border border-neutral-200/80"
-                >
-                  <UploadCloud className="w-4 h-4 text-neutral-600" />
-                  <span>Figma Assets & Image Upload</span>
-                  {assignedCount > 0 && (
-                    <span className="bg-emerald-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-mono">
-                      {assignedCount} active
-                    </span>
-                  )}
-                </button>
-
+              <div className="pt-4 border-t border-neutral-200/80">
                 <Link
                   to="/contact"
                   className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-neutral-900 active:bg-neutral-800 transition-colors shadow-xs"

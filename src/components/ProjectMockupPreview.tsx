@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Plane, 
   Ticket, 
@@ -14,13 +14,8 @@ import {
   Sparkles,
   Smartphone,
   Laptop,
-  Image as ImageIcon,
-  UploadCloud,
-  RefreshCw,
-  Check,
-  Plus
+  Image as ImageIcon
 } from 'lucide-react';
-import { useAssets } from '../context/AssetContext';
 
 interface ProjectMockupPreviewProps {
   projectId: string;
@@ -41,79 +36,22 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
   className = '',
   altText = 'Project preview',
 }) => {
-  const { 
-    getSlotImage, 
-    assignAssetToSlot, 
-    removeAssignedAsset, 
-    draggedAsset, 
-    uploadFiles, 
-    setTrayOpen 
-  } = useAssets();
-
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [isDragOver, setIsDragOver] = useState<boolean>(false);
-  const customImage = getSlotImage(projectId);
-  const activeImage = customImage || imageUrl;
-
-  const [currentSrc, setCurrentSrc] = useState<string>(activeImage || '');
+  const defaultImage = imageUrl || `/images/projects/${projectId}/hero.jpg`;
+  const [currentSrc, setCurrentSrc] = useState<string>(defaultImage);
   const [imgError, setImgError] = useState<boolean>(false);
 
   useEffect(() => {
-    setCurrentSrc(activeImage || '');
+    setCurrentSrc(imageUrl || `/images/projects/${projectId}/hero.jpg`);
     setImgError(false);
-  }, [activeImage]);
+  }, [imageUrl, projectId]);
 
   const handleImageError = () => {
-    // If the image failed with .png, try .jpg
-    if (currentSrc.endsWith('.png')) {
-      setCurrentSrc(currentSrc.replace(/\.png$/, '.jpg'));
-    } else if (currentSrc.endsWith('.jpg')) {
-      // If .jpg failed, try .png
+    if (currentSrc.endsWith('.jpg')) {
       setCurrentSrc(currentSrc.replace(/\.jpg$/, '.png'));
+    } else if (currentSrc.endsWith('.png')) {
+      setCurrentSrc(currentSrc.replace(/\.png$/, '.webp'));
     } else {
       setImgError(true);
-    }
-  };
-
-  const handleFilePickerChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      const newAssets = await uploadFiles(e.target.files);
-      if (newAssets.length > 0) {
-        assignAssetToSlot(projectId, newAssets[0].dataUrl);
-      }
-    }
-  };
-
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragOver(true);
-  };
-
-  const handleDragLeave = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragOver(false);
-  };
-
-  const handleDrop = async (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragOver(false);
-
-    // If dragged from internal Figma Asset Shelf
-    const transferUrl = e.dataTransfer.getData('text/plain') || draggedAsset?.dataUrl;
-    if (transferUrl) {
-      assignAssetToSlot(projectId, transferUrl);
-      return;
-    }
-
-    // If dragged directly from user operating system / Figma desktop
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      const newAssets = await uploadFiles(e.dataTransfer.files);
-      if (newAssets.length > 0) {
-        assignAssetToSlot(projectId, newAssets[0].dataUrl);
-      }
     }
   };
 
@@ -131,13 +69,10 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
     }
   };
 
-  // If a real image or custom uploaded Figma image exists, render it cleanly
+  // If a real image exists and has not failed to load, render it cleanly
   if (!imgError && currentSrc && currentSrc.trim().length > 0) {
     return (
       <div 
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
         className={`group relative overflow-hidden rounded-xl border border-neutral-200/90 bg-neutral-100 ${getAspectClass()} ${className}`}
       >
         <img
@@ -147,72 +82,6 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
           onError={handleImageError}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-
-        {/* Drop target highlight overlay */}
-        {isDragOver && (
-          <div className="absolute inset-0 z-30 bg-neutral-900/85 backdrop-blur-xs flex flex-col items-center justify-center text-white p-4 text-center border-2 border-dashed border-white/80 animate-in fade-in duration-150">
-            <UploadCloud className="w-8 h-8 text-emerald-400 mb-2 animate-bounce" />
-            <p className="text-xs font-bold uppercase tracking-wider">Drop to Replace Image</p>
-            <p className="text-[10px] text-neutral-300 font-mono mt-0.5">Assigns new Figma asset to this slot</p>
-          </div>
-        )}
-
-        {/* Status badges and quick actions */}
-        <div className="absolute top-3 right-3 flex items-center gap-1.5 z-20">
-          {customImage && (
-            <span className="inline-flex items-center gap-1 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-mono px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm font-semibold">
-              <Check className="w-2.5 h-2.5" />
-              Figma Asset
-            </span>
-          )}
-
-          {customImage && (
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                removeAssignedAsset(projectId);
-              }}
-              className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-1 bg-black/80 hover:bg-black text-white text-[10px] font-mono px-2 py-1 rounded-full shadow-sm"
-              title="Revert to vector mockup"
-            >
-              <RefreshCw className="w-2.5 h-2.5" />
-              <span>Reset</span>
-            </button>
-          )}
-
-          {!customImage && (
-            <div className="bg-black/60 backdrop-blur-md text-white/90 text-[10px] font-mono px-2.5 py-1 rounded-full uppercase tracking-wider">
-              Live Asset
-            </div>
-          )}
-        </div>
-
-        {/* Hidden File Picker */}
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/png,image/jpeg,image/webp,image/svg+xml"
-          onChange={handleFilePickerChange}
-          className="hidden"
-        />
-
-        {/* Hover Upload / Change Button */}
-        <div className="absolute bottom-3 left-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              fileInputRef.current?.click();
-            }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-900/90 hover:bg-neutral-900 text-white text-[11px] font-semibold shadow-lg backdrop-blur-xs transition-colors cursor-pointer border border-neutral-700/50"
-          >
-            <UploadCloud className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Upload / Change Image</span>
-          </button>
-        </div>
       </div>
     );
   }
@@ -594,131 +463,38 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
 
   return (
     <div
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
-      onDrop={handleDrop}
       className={`group relative w-full overflow-hidden rounded-xl border border-neutral-200/90 shadow-sm transition-all duration-300 hover:shadow-md hover:border-neutral-300 ${getAspectClass()} ${className}`}
     >
       {/* Visual Mockup Surface */}
       <div className="w-full h-full transform transition-transform duration-500 ease-out group-hover:scale-[1.02]">
         {getMockupContent()}
       </div>
-
-      {/* Drag & Drop Highlight Overlay for Mockups */}
-      {isDragOver && (
-        <div className="absolute inset-0 z-30 bg-neutral-900/85 backdrop-blur-xs flex flex-col items-center justify-center text-white p-4 text-center border-2 border-dashed border-white/80 animate-in fade-in duration-150">
-          <UploadCloud className="w-8 h-8 text-emerald-400 mb-2 animate-bounce" />
-          <p className="text-xs font-bold uppercase tracking-wider">Drop Figma Image Here</p>
-          <p className="text-[10px] text-neutral-300 font-mono mt-0.5">Sets as active showcase image for this project</p>
-        </div>
-      )}
-
-      {/* Hidden File Picker */}
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/png,image/jpeg,image/webp,image/svg+xml"
-        onChange={handleFilePickerChange}
-        className="hidden"
-      />
-
-      {/* Discrete label and upload buttons */}
-      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-20 flex items-center gap-1.5">
-        <button
-          type="button"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            fileInputRef.current?.click();
-          }}
-          className="flex items-center gap-1.5 bg-black/80 hover:bg-black backdrop-blur-md text-white/90 hover:text-white text-[9px] font-mono px-2.5 py-1 rounded-full border border-white/10 shadow-sm transition-colors cursor-pointer"
-        >
-          <UploadCloud className="w-3 h-3 text-emerald-400" />
-          <span>Upload Image</span>
-        </button>
-      </div>
     </div>
   );
 };
 
 export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const { 
-    getSlotImage, 
-    assignAssetToSlot, 
-    removeAssignedAsset, 
-    draggedAsset, 
-    uploadFiles, 
-    setTrayOpen 
-  } = useAssets();
-
-  const profileFileInputRef = useRef<HTMLInputElement>(null);
-  const [isDragOver, setIsDragOver] = useState<boolean>(false);
-  const profileImage = getSlotImage('profile-portrait') || '/images/profile/portrait.jpg';
-
-  const [portraitSrc, setPortraitSrc] = useState<string>(profileImage);
+  const [portraitSrc, setPortraitSrc] = useState<string>('/images/profile/portrait.jpg');
   const [portraitError, setPortraitError] = useState<boolean>(false);
 
   useEffect(() => {
-    setPortraitSrc(profileImage);
+    setPortraitSrc('/images/profile/portrait.jpg');
     setPortraitError(false);
-  }, [profileImage]);
+  }, []);
 
   const handlePortraitError = () => {
-    if (portraitSrc.endsWith('.png')) {
-      setPortraitSrc(portraitSrc.replace(/\.png$/, '.jpg'));
-    } else if (portraitSrc.endsWith('.jpg')) {
+    if (portraitSrc.endsWith('.jpg')) {
       setPortraitSrc(portraitSrc.replace(/\.jpg$/, '.png'));
+    } else if (portraitSrc.endsWith('.png')) {
+      setPortraitSrc(portraitSrc.replace(/\.png$/, '.webp'));
     } else {
       setPortraitError(true);
-    }
-  };
-
-  const handleProfileFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      const newAssets = await uploadFiles(e.target.files);
-      if (newAssets.length > 0) {
-        assignAssetToSlot('profile-portrait', newAssets[0].dataUrl);
-      }
-    }
-  };
-
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragOver(true);
-  };
-
-  const handleDragLeave = (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragOver(false);
-  };
-
-  const handleDrop = async (e: React.DragEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragOver(false);
-
-    const transferUrl = e.dataTransfer.getData('text/plain') || draggedAsset?.dataUrl;
-    if (transferUrl) {
-      assignAssetToSlot('profile-portrait', transferUrl);
-      return;
-    }
-
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      const newAssets = await uploadFiles(e.dataTransfer.files);
-      if (newAssets.length > 0) {
-        assignAssetToSlot('profile-portrait', newAssets[0].dataUrl);
-      }
     }
   };
 
   if (!portraitError && portraitSrc && portraitSrc.trim().length > 0) {
     return (
       <div
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
         className={`group relative overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 shadow-sm ${className}`}
       >
         <img
@@ -727,81 +503,16 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
           onError={handlePortraitError}
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
         />
-
-        {/* Drop target overlay */}
-        {isDragOver && (
-          <div className="absolute inset-0 z-30 bg-neutral-900/85 backdrop-blur-xs flex flex-col items-center justify-center text-white p-4 text-center border-2 border-dashed border-white/80 animate-in fade-in duration-150">
-            <UploadCloud className="w-8 h-8 text-emerald-400 mb-2 animate-bounce" />
-            <p className="text-xs font-bold uppercase tracking-wider">Drop to Replace Portrait</p>
-          </div>
-        )}
-
-        {/* Action badge */}
-        <div className="absolute top-3 right-3 flex items-center gap-1.5 z-20">
-          <span className="inline-flex items-center gap-1 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-mono px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm font-semibold">
-            <Check className="w-2.5 h-2.5" /> Photo Active
-          </span>
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              removeAssignedAsset('profile-portrait');
-            }}
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-1 bg-black/80 hover:bg-black text-white text-[10px] font-mono px-2 py-1 rounded-full shadow-sm"
-            title="Revert to monogram emblem"
-          >
-            <RefreshCw className="w-2.5 h-2.5" />
-            <span>Reset</span>
-          </button>
-        </div>
-
-        {/* Hidden File Picker */}
-        <input
-          ref={profileFileInputRef}
-          type="file"
-          accept="image/png,image/jpeg,image/webp,image/svg+xml"
-          onChange={handleProfileFileChange}
-          className="hidden"
-        />
-
-        {/* Hover Upload / Change Button */}
-        <div className="absolute bottom-3 left-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              profileFileInputRef.current?.click();
-            }}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-900/90 hover:bg-neutral-900 text-white text-[11px] font-semibold shadow-lg backdrop-blur-xs transition-colors cursor-pointer border border-neutral-700/50"
-          >
-            <UploadCloud className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Upload / Change Photo</span>
-          </button>
-        </div>
       </div>
     );
   }
 
   return (
     <div
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
-      onDrop={handleDrop}
       className={`group relative overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-b from-[#F7F7F6] to-[#ECECEB] flex flex-col items-center justify-center p-8 text-center shadow-sm ${className}`}
     >
       {/* Decorative architectural grid lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:24px_24px] opacity-30 pointer-events-none" />
-
-      {/* Hidden File Picker */}
-      <input
-        ref={profileFileInputRef}
-        type="file"
-        accept="image/png,image/jpeg,image/webp,image/svg+xml"
-        onChange={handleProfileFileChange}
-        className="hidden"
-      />
 
       {/* Monogram emblem */}
       <div className="relative z-10 w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-neutral-900 text-white flex flex-col items-center justify-center shadow-lg mb-6 border border-neutral-800">
@@ -812,34 +523,7 @@ export const ProfilePortraitPlaceholder: React.FC<{ className?: string }> = ({ c
       <div className="relative z-10 max-w-xs">
         <h4 className="text-base font-bold text-neutral-900 tracking-tight">Isaiah Oluwatoyin</h4>
         <p className="text-xs text-neutral-500 mt-0.5">Product Designer & Digital Product Builder</p>
-        
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-          <button
-            type="button"
-            onClick={() => profileFileInputRef.current?.click()}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-900 text-white text-[11px] font-semibold hover:bg-neutral-800 shadow-xs transition-colors cursor-pointer"
-          >
-            <UploadCloud className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Upload Photo</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setTrayOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 hover:bg-white border border-neutral-200/80 text-[11px] font-mono text-neutral-600 hover:text-neutral-900 shadow-2xs transition-colors cursor-pointer"
-          >
-            <span>Figma Shelf</span>
-          </button>
-        </div>
       </div>
-
-      {/* Drop overlay */}
-      {isDragOver && (
-        <div className="absolute inset-0 z-30 bg-neutral-900/85 backdrop-blur-xs flex flex-col items-center justify-center text-white p-4 text-center border-2 border-dashed border-white/80 animate-in fade-in duration-150">
-          <UploadCloud className="w-8 h-8 text-emerald-400 mb-2 animate-bounce" />
-          <p className="text-xs font-bold uppercase tracking-wider">Drop Isaiah's Portrait Photo</p>
-        </div>
-      )}
     </div>
   );
 };
