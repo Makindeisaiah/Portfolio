@@ -200,8 +200,8 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
             </div>
 
             <div className="pt-2 z-10 flex items-center justify-between text-[10px] text-neutral-400 border-t border-neutral-900">
-              <span>Multi-Platform: Attendee App • Scanner HUD • Dashboard</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-indigo-400" />
+              <span>Multi-Platform Attendee & Organizer Portal</span>
+              <span className="text-indigo-300 font-mono">ticketa2-1.vercel.app</span>
             </div>
           </div>
         );

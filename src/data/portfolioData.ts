@@ -305,6 +305,74 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
       'The live digital web presence for Ziba Innovation elevated brand trust among corporate partners and established a cohesive gateway for merchant acquisition.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Vercel'],
   },
+  {
+    id: 'ticketa',
+    title: 'Ticketa',
+    category: 'Event Platform & Ticketing',
+    tagline: 'High-performance ticketing web portal & live event ecosystem',
+    description:
+      'A complete event ticketing web portal connecting attendees, organizers, and live event producers with real-time pass bookings and gate analytics.',
+    tags: ['Web Platform', 'Event Ticketing', 'Development'],
+    year: '2024',
+    role: 'Lead Product Designer & Web Architect',
+    tools: ['Figma', 'React', 'Tailwind CSS', 'TypeScript'],
+    client: 'Live Entertainment & Festival Ecosystem',
+    liveUrl: 'https://ticketa2-1.vercel.app/',
+    thumbnailUrl: '/images/projects/ticketa/hero.jpg',
+    heroImage: '/images/projects/ticketa/hero.jpg',
+    accentColor: '#4F46E5', // Indigo event energy
+    challenge:
+      'Ticketa required a high-capacity web platform capable of handling intense peak ticket drops without downtime, while giving attendees instantaneous QR access and organizers real-time gate telemetry.',
+    goals: [
+      'Design an effortless 3-step checkout flow for high-volume concert and festival ticket drops',
+      'Provide instant animated QR passes with anti-screenshot security and offline token caching',
+      'Deliver real-time gate pacing and box-office analytics for event organizers on any screen',
+    ],
+    designDirection: {
+      typography: 'Punchy geometric sans-serif with high-contrast stage-inspired visual hierarchy.',
+      colorPalette: [
+        { name: 'Dark Stage', hex: '#111322', role: 'Main Canvas Background' },
+        { name: 'Electric Indigo', hex: '#4F46E5', role: 'Primary Brand Action' },
+        { name: 'Neon Lime', hex: '#10B981', role: 'Live Gate Status & Valid Tokens' },
+      ],
+      editorialApproach: 'High-energy live event visuals, dynamic ticket preview cards, and friction-free mobile checkouts.',
+    },
+    keyScreens: [
+      {
+        title: 'Event Lineup & Ticket Drop Hero',
+        description: 'Immersive festival discoverability featuring live countdown timers and tiered pass selection.',
+        type: 'desktop',
+      },
+      {
+        title: '3-Step Rapid Mobile Checkout',
+        description: 'Frictionless ticket tier purchase with instant digital wallet and card settlement.',
+        type: 'mobile',
+      },
+      {
+        title: 'Dynamic QR Attendee Portal',
+        description: 'Cryptographic rotating QR pass preventing scalper screenshot fraud with offline wallet storage.',
+        type: 'mobile',
+      },
+      {
+        title: 'Organizer Box-Office Dashboard',
+        description: 'Live attendance telemetry displaying gate scan velocity and gross door revenue.',
+        type: 'tablet',
+      },
+    ],
+    responsiveFeatures: [
+      'Real-time seat and tiered zone selection optimized for both smartphone touchscreens and desktop viewports',
+      'Progressive offline caching for attendee passes so tickets load instantly even in crowded stadium dead zones',
+      'Dynamic ticket countdown timer with automatic cart reservation holds',
+    ],
+    developmentHighlights: [
+      'Built with modern React and TypeScript for maximum rendering performance during flash sales',
+      'Tailwind CSS design system shared across attendee web portals and administrative dashboards',
+      'Deployed on Vercel with edge caching and lightning-fast asset distribution',
+    ],
+    finalWebsiteOverview:
+      'The Ticketa web platform delivers a seamless, fraud-resistant ticketing experience trusted by festival producers and event goers across hundreds of live performances.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Next.js'],
+  },
 ];
 
 export const UIUX_PROJECTS: UIUXProject[] = [
@@ -502,6 +570,7 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     timeline: '14 Weeks (Multi-Platform Ecosystem)',
     platforms: ['Attendee iOS/Android App', 'Attendee Web Portal', 'Organizer Analytics Dashboard', 'Staff Gate Scanner App'],
     clientOrContext: 'Live Entertainment & Festival Ecosystem',
+    liveUrl: 'https://ticketa2-1.vercel.app/',
     thumbnailUrl: '/images/projects/ticketa/hero.jpg',
     heroImage: '/images/projects/ticketa/hero.jpg',
     accentColor: '#4F46E5', // Indigo event energy
