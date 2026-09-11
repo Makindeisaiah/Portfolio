@@ -41,7 +41,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     description:
       'A refined digital presence for a luxury interior architecture and design studio based in Lagos.',
     tags: ['Website Design', 'Development', 'Responsive Design'],
-    year: '2025',
+    year: '2026',
     role: 'Lead Designer & Frontend Developer',
     tools: ['Figma', 'React', 'Tailwind CSS', 'Motion'],
     client: 'OMONY Atelier Studios (Lagos)',
@@ -109,7 +109,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     description:
       'A professional property management website designed to communicate services, build trust and improve the company’s digital presence.',
     tags: ['Website Design', 'UX/UI', 'Development'],
-    year: '2024',
+    year: '2026',
     role: 'UI/UX Designer & Web Developer',
     tools: ['Figma', 'HTML5', 'Tailwind CSS', 'JavaScript'],
     client: 'Validreams Property Management',
@@ -177,7 +177,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     description:
       'A modern digital publishing experience designed for an international news platform.',
     tags: ['Website Design', 'WordPress', 'Publishing'],
-    year: '2024',
+    year: '2026',
     role: 'Digital Product Designer & WordPress Developer',
     tools: ['Figma', 'WordPress', 'PHP', 'CSS3', 'REST API'],
     client: 'KoikiMedia International',
@@ -245,7 +245,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     description:
       'A cutting-edge digital presence designed for Ziba Innovation, showcasing modern financial infrastructure, payment services, and business solutions.',
     tags: ['Website Design', 'Fintech', 'Development'],
-    year: '2024',
+    year: '2026',
     role: 'Product Designer & Frontend Developer',
     tools: ['Figma', 'React', 'Tailwind CSS', 'TypeScript'],
     client: 'Ziba Innovation',
@@ -313,7 +313,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     description:
       'A complete event ticketing web portal connecting attendees, organizers, and live event producers with real-time pass bookings and gate analytics.',
     tags: ['Web Platform', 'Event Ticketing', 'Development'],
-    year: '2024',
+    year: '2026',
     role: 'Lead Product Designer & Web Architect',
     tools: ['Figma', 'React', 'Tailwind CSS', 'TypeScript'],
     client: 'Live Entertainment & Festival Ecosystem',
@@ -565,7 +565,7 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     description:
       'A complete event ticketing ecosystem connecting attendees, organizers and event staff across mobile, web and dashboard experiences.',
     tags: ['Product Design', 'Mobile', 'Web', 'Dashboard', 'Design System'],
-    year: '2024',
+    year: '2026',
     role: 'Lead Product Designer & System Architect',
     timeline: '14 Weeks (Multi-Platform Ecosystem)',
     platforms: ['Attendee iOS/Android App', 'Attendee Web Portal', 'Organizer Analytics Dashboard', 'Staff Gate Scanner App'],
@@ -748,7 +748,7 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     description:
       'A fintech mobile experience designed around payments, transfers, airtime, data, bills, cards and other financial services.',
     tags: ['Product Design', 'Fintech', 'Mobile', 'UX/UI'],
-    year: '2024',
+    year: '2025',
     role: 'Product Designer & Interaction Architect',
     timeline: '8 Weeks',
     platforms: ['iOS App', 'Android App'],
@@ -930,7 +930,7 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     description:
       'A digital payment experience designed to support modern financial transactions and business services.',
     tags: ['Product Design', 'Fintech', 'Payments'],
-    year: '2024',
+    year: '2026',
     role: 'Product Designer & UX Researcher',
     timeline: '9 Weeks',
     platforms: ['Merchant Web Portal', 'Mobile Checkout SDK', 'Customer Payment App'],

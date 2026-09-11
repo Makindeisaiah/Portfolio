@@ -348,7 +348,7 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
                 </div>
                 <div className="bg-stone-900/80 border border-stone-800 p-2 rounded text-center">
                   <span className="text-[9px] text-stone-400 font-mono">COMPLETION</span>
-                  <p className="text-xs font-bold text-stone-200">Q3 2025</p>
+                  <p className="text-xs font-bold text-stone-200">Q1 2026</p>
                 </div>
               </div>
             </div>

@@ -19,9 +19,15 @@ import {
 import { UIUX_PROJECTS } from '../data/portfolioData';
 import { ProjectMockupPreview } from '../components/ProjectMockupPreview';
 import { ContactSection } from '../components/ContactSection';
+import { TicketaCaseStudyPage } from './TicketaCaseStudyPage';
 
 export const UIUXDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+
+  if (id === 'ticketa') {
+    return <TicketaCaseStudyPage />;
+  }
+
   const projectIndex = UIUX_PROJECTS.findIndex((p) => p.id === id);
 
   if (projectIndex === -1) {

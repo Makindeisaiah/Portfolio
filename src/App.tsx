@@ -10,6 +10,7 @@ import { UIUXPage } from './pages/UIUXPage';
 import { UIUXDetailPage } from './pages/UIUXDetailPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { TicketaCaseStudyPage } from './pages/TicketaCaseStudyPage';
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
             <Route path="/websites/:id" element={<WebsiteDetailPage />} />
             <Route path="/ui-ux" element={<UIUXPage />} />
             <Route path="/ui-ux/:id" element={<UIUXDetailPage />} />
+            <Route path="/case-study/ticketa" element={<TicketaCaseStudyPage />} />
+            <Route path="/ticketa" element={<TicketaCaseStudyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<HomePage />} />

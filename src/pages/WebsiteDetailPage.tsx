@@ -31,7 +31,7 @@ export const WebsiteDetailPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-neutral-900 pt-28 pb-20">
       {/* Back breadcrumb */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 space-y-4">
         <Link
           to="/websites"
           className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-neutral-500 hover:text-neutral-900 transition-colors"
@@ -39,6 +39,26 @@ export const WebsiteDetailPage: React.FC = () => {
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to all websites</span>
         </Link>
+
+        {id === 'ticketa' && (
+          <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div className="space-y-0.5">
+              <span className="font-mono uppercase font-bold text-emerald-800 tracking-wider">
+                Full 4-Platform Ecosystem Case Study Available
+              </span>
+              <p className="text-neutral-600">
+                Ticketa connects Mobile App, Marketplace, Organizer Dashboard &amp; Staff Check-in.
+              </p>
+            </div>
+            <Link
+              to="/case-study/ticketa"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-neutral-900 text-white font-mono text-xs uppercase tracking-wider hover:bg-neutral-800 transition-colors shrink-0"
+            >
+              <span>View Product Case Study</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        )}
       </div>
 
       <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-20">
