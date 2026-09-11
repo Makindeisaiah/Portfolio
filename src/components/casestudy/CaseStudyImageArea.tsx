@@ -11,6 +11,7 @@ export interface UploadedMediaItem {
 
 interface CaseStudyImageAreaProps {
   storageKey: string;
+  storagePrefix?: string;
   placeholderLabel: string;
   description?: string;
   allowMultiple?: boolean;
@@ -22,6 +23,7 @@ interface CaseStudyImageAreaProps {
 
 export const CaseStudyImageArea: React.FC<CaseStudyImageAreaProps> = ({
   storageKey,
+  storagePrefix = 'pacejet',
   placeholderLabel,
   description,
   allowMultiple = false,
@@ -30,9 +32,11 @@ export const CaseStudyImageArea: React.FC<CaseStudyImageAreaProps> = ({
   defaultFit = 'cover',
   className = '',
 }) => {
+  const resolvedStorageKey = `${storagePrefix}_img_${storageKey}`;
+
   const [items, setItems] = useState<UploadedMediaItem[]>(() => {
     try {
-      const saved = localStorage.getItem(`ticketa_img_${storageKey}`);
+      const saved = localStorage.getItem(resolvedStorageKey) || localStorage.getItem(`ticketa_img_${storageKey}`);
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
@@ -56,14 +60,14 @@ export const CaseStudyImageArea: React.FC<CaseStudyImageAreaProps> = ({
   useEffect(() => {
     try {
       if (items.length > 0) {
-        localStorage.setItem(`ticketa_img_${storageKey}`, JSON.stringify(items));
+        localStorage.setItem(resolvedStorageKey, JSON.stringify(items));
       } else {
-        localStorage.removeItem(`ticketa_img_${storageKey}`);
+        localStorage.removeItem(resolvedStorageKey);
       }
     } catch {
       // LocalStorage quota or private mode fallback
     }
-  }, [items, storageKey]);
+  }, [items, resolvedStorageKey]);
 
   const handleFiles = (files: FileList | null) => {
     if (!files || files.length === 0) return;

@@ -11,6 +11,7 @@ import { UIUXDetailPage } from './pages/UIUXDetailPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { TicketaCaseStudyPage } from './pages/TicketaCaseStudyPage';
+import { PaceJetCaseStudyPage } from './pages/PaceJetCaseStudyPage';
 
 export default function App() {
   return (
@@ -27,6 +28,8 @@ export default function App() {
             <Route path="/ui-ux/:id" element={<UIUXDetailPage />} />
             <Route path="/case-study/ticketa" element={<TicketaCaseStudyPage />} />
             <Route path="/ticketa" element={<TicketaCaseStudyPage />} />
+            <Route path="/case-study/pacejet" element={<PaceJetCaseStudyPage />} />
+            <Route path="/pacejet" element={<PaceJetCaseStudyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<HomePage />} />

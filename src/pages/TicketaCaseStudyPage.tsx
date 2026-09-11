@@ -167,7 +167,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
           {/* Hero Image Container */}
           <div className="space-y-2">
-            <CaseStudyImageArea
+            <CaseStudyImageArea storagePrefix="ticketa"
               storageKey="hero"
               placeholderLabel="HERO PRODUCT VISUAL"
               description="Upload a high-resolution product mockup or composite screen collection showing Ticketa's multi-platform ecosystem."
@@ -202,7 +202,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
           {/* Overview Image Placeholder */}
           <div className="pt-2">
-            <CaseStudyImageArea
+            <CaseStudyImageArea storagePrefix="ticketa"
               storageKey="ecosystem_overview"
               placeholderLabel="UPLOAD: TICKETA ECOSYSTEM OVERVIEW"
               description="Upload an overview graphic or diagram illustrating how attendees, organizers, and staff interact across the Ticketa ecosystem."
@@ -486,7 +486,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
               </div>
 
               <div className="lg:col-span-6">
-                <CaseStudyImageArea
+                <CaseStudyImageArea storagePrefix="ticketa"
                   storageKey="mobile_app_screens"
                   placeholderLabel="UPLOAD ATTENDEE MOBILE APP SCREENS"
                   description="Upload primary feature image + smaller supporting mobile screens showing event discovery, ticket selection, wallet and offline passes."
@@ -580,7 +580,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
               {/* Wide desktop image placeholder */}
               <div className="pt-4">
-                <CaseStudyImageArea
+                <CaseStudyImageArea storagePrefix="ticketa"
                   storageKey="marketplace_screens"
                   placeholderLabel="UPLOAD TICKETA MARKETPLACE / WEBSITE SCREENS"
                   description="Upload wide desktop screenshots of the Ticketa marketplace homepage, search filters, category views, and ticket checkout drawer."
@@ -700,7 +700,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
               {/* Dashboard Gallery Image Placeholder */}
               <div className="pt-2">
-                <CaseStudyImageArea
+                <CaseStudyImageArea storagePrefix="ticketa"
                   storageKey="organizer_dashboard_screens"
                   placeholderLabel="UPLOAD ORGANIZER DASHBOARD SCREENS"
                   description="Upload dashboard screens across: Dashboard Overview, Event Management, Ticket Sales, Analytics, Revenue, Event Creation."
@@ -788,7 +788,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
               {/* Staff Screens Image Placeholder */}
               <div className="pt-2">
-                <CaseStudyImageArea
+                <CaseStudyImageArea storagePrefix="ticketa"
                   storageKey="staff_checkin_screens"
                   placeholderLabel="UPLOAD STAFF CHECK-IN SCREENS"
                   description="Upload staff check-in screens including camera QR viewfinder, validation status feedback, attendee search, and gate stats."
@@ -1110,7 +1110,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
           {/* User Flow Diagram Image Placeholder */}
           <div className="pt-2">
-            <CaseStudyImageArea
+            <CaseStudyImageArea storagePrefix="ticketa"
               storageKey="user_flow"
               placeholderLabel="UPLOAD USER FLOW / FLOWCHART"
               description="Upload high-res flowchart or system sequence diagram mapping the multi-platform user pathways."
@@ -1141,7 +1141,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
           {/* Wireframes Image Placeholder */}
           <div className="pt-2">
-            <CaseStudyImageArea
+            <CaseStudyImageArea storagePrefix="ticketa"
               storageKey="wireframes"
               placeholderLabel="UPLOAD WIREFRAMES"
               description="Upload early wireframe explorations, whiteboard flows, and greyscale structural drafts across mobile and web."
@@ -1257,7 +1257,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
           {/* Design System Image Placeholder */}
           <div className="pt-2">
-            <CaseStudyImageArea
+            <CaseStudyImageArea storagePrefix="ticketa"
               storageKey="design_system"
               placeholderLabel="UPLOAD TICKETA DESIGN SYSTEM / COMPONENTS"
               description="Upload design system sheets, atomic UI tokens, component variants, and card states."
@@ -1298,7 +1298,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
           {/* Responsive Screens Image Placeholder */}
           <div className="pt-2">
-            <CaseStudyImageArea
+            <CaseStudyImageArea storagePrefix="ticketa"
               storageKey="responsive_screens"
               placeholderLabel="UPLOAD RESPONSIVE SCREENS"
               description="Upload side-by-side comparisons of mobile, tablet, and desktop breakpoints."
@@ -1357,7 +1357,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
 
           {/* Development Image Placeholder */}
           <div className="pt-2">
-            <CaseStudyImageArea
+            <CaseStudyImageArea storagePrefix="ticketa"
               storageKey="dev_screens"
               placeholderLabel="UPLOAD DEVELOPMENT / LIVE PRODUCT SCREENSHOTS"
               description="Upload live code, terminal outputs, IDE components, or live production previews."
@@ -1686,7 +1686,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
                 </div>
                 <h3 className="text-base font-bold text-neutral-900">Attendee App</h3>
               </div>
-              <CaseStudyImageArea
+              <CaseStudyImageArea storagePrefix="ticketa"
                 storageKey="final_showcase_mobile"
                 placeholderLabel="UPLOAD FINAL PRODUCT SHOWCASE"
                 description="Upload final Attendee App mockup."
@@ -1704,7 +1704,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
                 </div>
                 <h3 className="text-base font-bold text-neutral-900">Event Marketplace</h3>
               </div>
-              <CaseStudyImageArea
+              <CaseStudyImageArea storagePrefix="ticketa"
                 storageKey="final_showcase_marketplace"
                 placeholderLabel="UPLOAD FINAL PRODUCT SHOWCASE"
                 description="Upload final Marketplace mockup."
@@ -1722,7 +1722,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
                 </div>
                 <h3 className="text-base font-bold text-neutral-900">Organizer Dashboard</h3>
               </div>
-              <CaseStudyImageArea
+              <CaseStudyImageArea storagePrefix="ticketa"
                 storageKey="final_showcase_organizer"
                 placeholderLabel="UPLOAD FINAL PRODUCT SHOWCASE"
                 description="Upload final Organizer screen."
@@ -1740,7 +1740,7 @@ export const TicketaCaseStudyPage: React.FC = () => {
                 </div>
                 <h3 className="text-base font-bold text-neutral-900">Staff Check-in</h3>
               </div>
-              <CaseStudyImageArea
+              <CaseStudyImageArea storagePrefix="ticketa"
                 storageKey="final_showcase_staff"
                 placeholderLabel="UPLOAD FINAL PRODUCT SHOWCASE"
                 description="Upload final Staff Check-in screen."

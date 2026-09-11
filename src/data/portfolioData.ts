@@ -379,18 +379,18 @@ export const UIUX_PROJECTS: UIUXProject[] = [
   {
     id: 'pacejet',
     title: 'PaceJet',
-    subtitle: 'Private Aviation Booking Platform',
+    subtitle: 'Private Aviation Booking Experience',
     description:
-      'A comprehensive private aviation booking experience designed to simplify the journey from flight discovery to booking, payment and trip management.',
-    tags: ['Product Design', 'UX/UI', 'Mobile', 'Design System'],
+      'A comprehensive private aviation booking experience with 150+ screens, restructuring the journey from aircraft discovery to booking, payment, and trip management.',
+    tags: ['Product Design', 'UX/UI', 'Mobile App', 'Design System'],
     year: '2025',
-    role: 'Lead Product Designer',
-    timeline: '10 Weeks (Research to Prototype & Design System)',
-    platforms: ['iOS App', 'Android App', 'Responsive Web Portal'],
+    role: 'Product Designer / UI/UX Designer',
+    timeline: 'End-to-End Product Design',
+    platforms: ['Mobile App (iOS & Android)'],
     clientOrContext: 'Private Aviation Charter Venture',
     thumbnailUrl: '/images/projects/pacejet/hero.jpg',
     heroImage: '/images/projects/pacejet/hero.jpg',
-    accentColor: '#0F172A', // Deep cockpit navy
+    accentColor: '#2EB732', // PaceJet Green
     problem:
       'Booking private air charters has traditionally required archaic back-and-forth broker phone calls, opaque pricing structures, and confusing aircraft categorization. High-value clients and executive assistants wasted hours obtaining empty-leg quotes and coordinating tarmac itineraries.',
     research: {
