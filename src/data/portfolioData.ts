@@ -749,13 +749,13 @@ export const UIUX_PROJECTS: UIUXProject[] = [
       'A fintech mobile experience designed around payments, transfers, airtime, data, bills, cards and other financial services.',
     tags: ['Product Design', 'Fintech', 'Mobile', 'UX/UI'],
     year: '2025',
-    role: 'Product Designer & Interaction Architect',
+    role: 'Product Designer',
     timeline: '8 Weeks',
     platforms: ['iOS App', 'Android App'],
-    clientOrContext: 'Emerging Markets Digital Banking Venture',
+    clientOrContext: 'Digital Banking & Payments',
     thumbnailUrl: '/images/projects/magicpay/hero.jpg',
     heroImage: '/images/projects/magicpay/hero.jpg',
-    accentColor: '#059669', // Emerald financial growth
+    accentColor: '#4F46E5', // MagicPay Indigo/Purple identity
     problem:
       'Everyday digital financial services in emerging markets are often riddled with hidden transaction fees, multi-step authentication failures, and cluttered navigation grids that overwhelm users trying to complete quick airtime, bill, or money transfers.',
     research: {
@@ -876,10 +876,12 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     },
     designSystem: {
       colors: [
-        { name: 'Emerald Growth', hex: '#059669', role: 'Primary Brand & Positive Balances' },
-        { name: 'Mint Mist', hex: '#ECFDF5', role: 'Success Badges & Subdued Cards' },
+        { name: 'Magic Indigo', hex: '#4F46E5', role: 'Primary Brand Anchor & Key Interactive CTAs' },
+        { name: 'Electric Violet', hex: '#7C3AED', role: 'Secondary Accents & Feature Badges' },
+        { name: 'Financial Emerald', hex: '#10B981', role: 'Positive Inflows & Verified Status' },
+        { name: 'Alert Coral', hex: '#EF4444', role: 'Debits & Critical Warnings' },
         { name: 'Slate Obsidian', hex: '#0F172A', role: 'High-Contrast Text & Buttons' },
-        { name: 'Soft Platinum', hex: '#F1F5F9', role: 'Background Canvas' },
+        { name: 'Cloud Canvas', hex: '#F8FAFC', role: 'Background Canvas' },
       ],
       typography: 'Manrope with monospaced currency numbers for flawless decimal and comma alignment.',
       components: [

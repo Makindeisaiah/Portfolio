@@ -12,6 +12,7 @@ import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { TicketaCaseStudyPage } from './pages/TicketaCaseStudyPage';
 import { PaceJetCaseStudyPage } from './pages/PaceJetCaseStudyPage';
+import { MagicPayCaseStudyPage } from './pages/MagicPayCaseStudyPage';
 
 export default function App() {
   return (
@@ -30,6 +31,8 @@ export default function App() {
             <Route path="/ticketa" element={<TicketaCaseStudyPage />} />
             <Route path="/case-study/pacejet" element={<PaceJetCaseStudyPage />} />
             <Route path="/pacejet" element={<PaceJetCaseStudyPage />} />
+            <Route path="/case-study/magicpay" element={<MagicPayCaseStudyPage />} />
+            <Route path="/magicpay" element={<MagicPayCaseStudyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<HomePage />} />

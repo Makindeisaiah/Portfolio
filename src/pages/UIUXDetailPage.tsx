@@ -21,6 +21,7 @@ import { ProjectMockupPreview } from '../components/ProjectMockupPreview';
 import { ContactSection } from '../components/ContactSection';
 import { TicketaCaseStudyPage } from './TicketaCaseStudyPage';
 import { PaceJetCaseStudyPage } from './PaceJetCaseStudyPage';
+import { MagicPayCaseStudyPage } from './MagicPayCaseStudyPage';
 
 export const UIUXDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -31,6 +32,10 @@ export const UIUXDetailPage: React.FC = () => {
 
   if (id === 'pacejet') {
     return <PaceJetCaseStudyPage />;
+  }
+
+  if (id === 'magicpay') {
+    return <MagicPayCaseStudyPage />;
   }
 
   const projectIndex = UIUX_PROJECTS.findIndex((p) => p.id === id);

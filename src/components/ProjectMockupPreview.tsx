@@ -208,46 +208,47 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
 
       case 'magicpay':
         return (
-          <div className="w-full h-full bg-[#081C15] text-white p-5 flex flex-col justify-between select-none relative overflow-hidden">
-            <div className="absolute -bottom-10 -right-10 w-44 h-44 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="w-full h-full bg-[#0E0F1E] text-white p-5 flex flex-col justify-between select-none relative overflow-hidden">
+            <div className="absolute -bottom-10 -right-10 w-44 h-44 bg-indigo-600/25 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="flex items-center justify-between border-b border-emerald-950 pb-3 z-10">
+            <div className="flex items-center justify-between border-b border-indigo-950/80 pb-3 z-10">
               <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 rounded-md bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
-                  <CreditCard className="w-3.5 h-3.5 text-emerald-400" />
+                <div className="w-6 h-6 rounded-md bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center">
+                  <CreditCard className="w-3.5 h-3.5 text-indigo-400" />
                 </div>
-                <span className="text-xs font-semibold tracking-wider uppercase text-emerald-200">MAGICPAY FINTECH</span>
+                <span className="text-xs font-semibold tracking-wider uppercase text-indigo-200">MAGICPAY FINTECH</span>
               </div>
-              <span className="text-[10px] font-mono bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800/40">
-                ZERO TRANSFER FEE
+              <span className="text-[10px] font-mono bg-indigo-950/80 text-indigo-300 px-2 py-0.5 rounded border border-indigo-800/40">
+                LIVE VERIFICATION
               </span>
             </div>
 
             <div className="my-auto py-2 space-y-2.5 z-10">
               {/* Balance card */}
-              <div className="bg-gradient-to-r from-emerald-900/70 to-emerald-950/90 border border-emerald-800/50 p-3.5 rounded-lg">
-                <div className="flex justify-between items-center text-[10px] text-emerald-300">
-                  <span>Available Balance</span>
-                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-900/60 px-1.5 py-0.5 rounded">Tier 3 Verified</span>
+              <div className="bg-gradient-to-r from-indigo-900/60 to-purple-950/80 border border-indigo-800/40 p-3.5 rounded-lg">
+                <div className="flex justify-between items-center text-[10px] text-indigo-300">
+                  <span>Available Balance (Masked)</span>
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/30">Tier 3 Verified</span>
                 </div>
-                <p className="text-xl font-bold text-white tracking-tight mt-0.5">
-                  $14,850<span className="text-xs text-neutral-400 font-normal">.60</span>
+                <p className="text-xl font-bold text-white tracking-tight mt-0.5 font-mono">
+                  •••••••••••
                 </p>
-                <div className="mt-2 pt-2 border-t border-emerald-900/60 flex items-center justify-between text-[10px]">
-                  <span className="text-emerald-200/70">Virtual Card •••• 8291</span>
-                  <span className="text-emerald-400 font-mono">Active</span>
+                <div className="mt-2 pt-2 border-t border-indigo-900/60 flex items-center justify-between text-[10px]">
+                  <span className="text-indigo-200/70">Virtual USD •••• 8291</span>
+                  <span className="text-emerald-400 font-mono">Tap to unmask</span>
                 </div>
               </div>
 
               {/* Verified Beneficiary */}
               <div className="bg-neutral-900/90 border border-neutral-800 p-2.5 rounded-lg flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2.5">
-                  <div className="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-[11px]">
-                    KO
+                  <div className="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold text-[11px]">
+                    AB
                   </div>
                   <div>
-                    <p className="font-semibold text-white text-[11px] leading-tight">Kelechi Okafor</p>
-                    <p className="text-[9px] text-neutral-400 font-mono">GTBank • 0192837461</p>
+                    <p className="font-semibold text-white text-[11px] leading-tight">Amina Bello</p>
+                    <p className="text-[9px] text-neutral-400 font-mono">Access Bank • 0192837461</p>
                   </div>
                 </div>
                 <div className="flex items-center text-[10px] text-emerald-400 space-x-1">
@@ -257,9 +258,9 @@ export const ProjectMockupPreview: React.FC<ProjectMockupPreviewProps> = ({
               </div>
             </div>
 
-            <div className="pt-2 z-10 flex items-center justify-between text-[10px] text-neutral-400 border-t border-emerald-950">
-              <span>Instant Transfer • Bills • Airtime • Cards</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="pt-2 z-10 flex items-center justify-between text-[10px] text-neutral-400 border-t border-indigo-950/80">
+              <span>Instant Transfers • Bills • Privacy Mode</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-indigo-400" />
             </div>
           </div>
         );
