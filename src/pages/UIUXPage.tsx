@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Smartphone, ArrowRight, Layers, ShieldCheck } from 'lucide-react';
+import { Smartphone, ArrowRight } from 'lucide-react';
 import { UIUX_PROJECTS } from '../data/portfolioData';
 import { ProjectCard } from '../components/ProjectCard';
 import { ContactSection } from '../components/ContactSection';
@@ -8,17 +8,18 @@ import { ContactSection } from '../components/ContactSection';
 export const UIUXPage: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('All');
 
-  const filters = ['All', 'Mobile Apps', 'Dashboards', 'Fintech', 'Design Systems'];
+  const filters = ['All', 'Mobile', 'Web', 'Dashboards', 'Fintech', 'Platforms'];
+
+  const UIUX_FILTER_MAP: Record<string, string[]> = {
+    pacejet: ['Mobile', 'Platforms'],
+    ticketa: ['Mobile', 'Web', 'Dashboards', 'Platforms'],
+    magicpay: ['Mobile', 'Fintech'],
+    zibapay: ['Fintech', 'Platforms', 'Web', 'Dashboards', 'Mobile'],
+  };
 
   const filteredProjects = selectedFilter === 'All'
     ? UIUX_PROJECTS
-    : UIUX_PROJECTS.filter((p) => {
-        if (selectedFilter === 'Mobile Apps') return p.tags.includes('Mobile');
-        if (selectedFilter === 'Dashboards') return p.tags.includes('Dashboard');
-        if (selectedFilter === 'Fintech') return p.tags.includes('Fintech');
-        if (selectedFilter === 'Design Systems') return p.tags.includes('Design System');
-        return true;
-      });
+    : UIUX_PROJECTS.filter((p) => UIUX_FILTER_MAP[p.id]?.includes(selectedFilter));
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-neutral-900 pt-32 pb-20">
@@ -27,13 +28,13 @@ export const UIUXPage: React.FC = () => {
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest text-neutral-500 mb-3">
             <Smartphone className="w-3.5 h-3.5" />
-            <span>DISCIPLINE 02 • DIGITAL PRODUCT INTERFACES</span>
+            <span>DISCIPLINE 01 • DIGITAL PRODUCT DESIGN</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900">
-            UI/UX Case Studies
+            Product Design Case Studies
           </h1>
           <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
-            Digital products designed to solve real user friction, optimize business workflows, and deliver intuitive interactions. Each case study documents the complete lifecycle from discovery research to validated design system tokens.
+            I design digital products across mobile, web, and complex dashboards, turning product requirements and user needs into clear, scalable experiences. My work spans UX strategy, interaction design, interface systems, prototyping, and product thinking.
           </p>
         </div>
 
@@ -62,20 +63,19 @@ export const UIUXPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Engineering Rigor Callout */}
+        {/* Scalable Digital Products Callout */}
         <div className="mt-16 p-8 rounded-2xl bg-white border border-neutral-200/90 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-xl">
-            <h3 className="text-lg font-bold text-neutral-900">Designing complex products with atomic design systems</h3>
-            <p className="text-xs text-neutral-600 mt-1">
-              Every interface is built around reusable design tokens, strict accessibility standards (WCAG AA), and ergonomic touch targets for mobile and desktop screens.
+            <h3 className="text-lg font-bold text-neutral-900">Designing scalable digital products</h3>
+            <p className="text-sm text-neutral-600 mt-1 leading-relaxed">
+              I build clear interface systems that help products stay consistent across mobile, web, and complex operational workflows.
             </p>
           </div>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-neutral-900 hover:bg-neutral-800 transition-colors shadow-xs"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-neutral-900 hover:bg-neutral-800 transition-colors shadow-xs shrink-0"
           >
-            <span>Discuss a Digital Product</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <span>DISCUSS A DIGITAL PRODUCT →</span>
           </Link>
         </div>
       </div>

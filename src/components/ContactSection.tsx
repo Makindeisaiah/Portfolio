@@ -55,7 +55,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               Let’s work together.
             </h2>
             <p className="text-base text-neutral-600 leading-relaxed">
-              Whether you need a digital product, mobile application, or a responsive website, let’s discuss how we can bring it to life.
+              Whether you are building a digital product, mobile application, web platform, or dashboard, let’s discuss how we can turn the idea into a clear and usable experience.
             </p>
 
             <div className="pt-2 space-y-3">

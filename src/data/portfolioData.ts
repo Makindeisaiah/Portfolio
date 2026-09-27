@@ -4,13 +4,13 @@ export const PERSONAL_INFO = {
   name: 'Isaiah Oluwatoyin',
   shortName: 'Isaiah',
   avatarUrl: '/images/profile/portrait.jpg',
-  positioning: 'Product Designer & Web Developer',
+  positioning: 'Product Designer & Digital Product Builder',
   heroHeadline: 'I design digital products that solve real problems.',
   heroSubheadline: 'Product Designer & Web Developer',
   heroSupporting:
     'I design intuitive digital experiences across mobile and web, combining product thinking, UX/UI design, and technical understanding to turn ideas into functional digital products.',
   supportingStatement:
-    'I design intuitive digital experiences across mobile and web, combining product thinking, UX/UI design, and technical understanding to turn ideas into functional digital products.',
+    'I design intuitive digital products across mobile and web, combining product thinking, UX/UI design, and technical understanding to turn ideas into functional experiences.',
   availabilityBadge: 'Open to Product Design opportunities',
   designProcessSteps: [
     { label: 'RESEARCH', desc: 'Understanding user needs, friction points, and business context' },
@@ -387,7 +387,7 @@ export const UIUX_PROJECTS: UIUXProject[] = [
   {
     id: 'pacejet',
     title: 'PaceJet',
-    subtitle: 'Private Aviation Booking Experience',
+    subtitle: 'PRIVATE AVIATION BOOKING EXPERIENCE',
     description:
       'A comprehensive private aviation booking experience with 150+ screens, restructuring the journey from aircraft discovery to booking, payment, and trip management.',
     tags: ['Product Design', 'UX/UI', 'Mobile App', 'Design System'],
@@ -569,9 +569,9 @@ export const UIUX_PROJECTS: UIUXProject[] = [
   {
     id: 'ticketa',
     title: 'Ticketa',
-    subtitle: 'Event Ticketing Platform',
+    subtitle: 'EVENT TICKETING PLATFORM',
     description:
-      'A complete event ticketing ecosystem connecting attendees, organizers and event staff across mobile, web and dashboard experiences.',
+      'A complete event ticketing ecosystem connecting attendees, organizers, and event staff across mobile, web, and dashboard experiences.',
     tags: ['Product Design', 'Mobile', 'Web', 'Dashboard', 'Design System'],
     year: '2026',
     role: 'Lead Product Designer & System Architect',
@@ -752,9 +752,9 @@ export const UIUX_PROJECTS: UIUXProject[] = [
   {
     id: 'magicpay',
     title: 'MagicPay',
-    subtitle: 'Fintech Mobile Application',
+    subtitle: 'FINTECH MOBILE APPLICATION',
     description:
-      'A fintech mobile experience designed around payments, transfers, airtime, data, bills, cards and other financial services.',
+      'A fintech mobile experience designed around payments, transfers, airtime, data, bills, cards, and other financial services.',
     tags: ['Product Design', 'Fintech', 'Mobile', 'UX/UI'],
     year: '2025',
     role: 'Product Designer',
@@ -936,7 +936,7 @@ export const UIUX_PROJECTS: UIUXProject[] = [
   {
     id: 'zibapay',
     title: 'Ziba Innovation — Digital Payment Platform',
-    subtitle: 'Digital Payment Platform',
+    subtitle: 'DIGITAL PAYMENT PLATFORM',
     description:
       'A digital payment experience designed to support modern financial transactions and business services.',
     tags: ['Product Design', 'Fintech', 'Payments'],
@@ -945,7 +945,6 @@ export const UIUX_PROJECTS: UIUXProject[] = [
     timeline: '9 Weeks',
     platforms: ['Merchant Web Portal', 'Mobile Checkout SDK', 'Customer Payment App'],
     clientOrContext: 'Ziba Innovation / Digital Payments Infrastructure',
-    liveUrl: 'https://zibainnovative.vercel.app/',
     thumbnailUrl: '/images/projects/zibapay/hero.jpg',
     heroImage: '/images/projects/zibapay/hero.jpg',
     accentColor: '#2563EB', // Electric royal blue
