@@ -2,18 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
-  ArrowDown, 
   ArrowUpRight, 
-  Sparkles, 
-  Layers, 
-  Code2, 
-  Database, 
-  Rocket, 
-  Check, 
-  Compass,
   Monitor,
   Smartphone,
-  ChevronRight
+  Check,
+  Layers,
+  Sparkles,
+  Compass
 } from 'lucide-react';
 import { 
   PERSONAL_INFO, 
@@ -39,28 +34,33 @@ export const HomePage: React.FC = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl space-y-6">
-            {/* Top Micro-Label */}
+            {/* Top Micro-Label / Availability Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-100 border border-neutral-200/80 text-xs font-medium text-neutral-700">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Available for select projects in 2026</span>
+              <span>Open to Product Design opportunities</span>
             </div>
 
             {/* Large Editorial Headline */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-900 leading-[1.08] text-balance">
-              {PERSONAL_INFO.heroHeadline}
+              I design digital products that solve real problems.
             </h1>
 
-            {/* Supporting Text */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
-              {PERSONAL_INFO.heroSupporting}
+            {/* Sub-headline positioning */}
+            <p className="text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-neutral-800">
+              Product Designer & Web Developer
             </p>
 
-            {/* Concept to Deployment Pipeline Tagline */}
+            {/* Supporting Text */}
+            <p className="text-base sm:text-lg lg:text-xl text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
+              I design intuitive digital experiences across mobile and web, combining product thinking, UX/UI design, and technical understanding to turn ideas into functional digital products.
+            </p>
+
+            {/* Product Design Process Tagline */}
             <div className="pt-2 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-xs font-mono uppercase tracking-wider text-neutral-500">
-              {PERSONAL_INFO.conceptToDeployment.map((step, idx) => (
-                <React.Fragment key={step.label}>
-                  <span className="text-neutral-800 font-semibold">{step.label}</span>
-                  {idx < PERSONAL_INFO.conceptToDeployment.length - 1 && (
+              {['RESEARCH', 'UX', 'UI', 'PROTOTYPE', 'ITERATE'].map((step, idx, arr) => (
+                <React.Fragment key={step}>
+                  <span className="text-neutral-800 font-semibold">{step}</span>
+                  {idx < arr.length - 1 && (
                     <span className="text-neutral-400">→</span>
                   )}
                 </React.Fragment>
@@ -92,7 +92,7 @@ export const HomePage: React.FC = () => {
             <div className="w-5 h-8 rounded-full border border-neutral-300 flex items-start justify-center p-1">
               <span className="w-1 h-2 rounded-full bg-neutral-500 animate-bounce" />
             </div>
-            <span className="uppercase tracking-widest text-[11px]">Scroll to explore disciplines</span>
+            <span className="uppercase tracking-widest text-[11px]">Scroll to explore work</span>
           </div>
         </div>
       </section>
@@ -108,25 +108,69 @@ export const HomePage: React.FC = () => {
               WHAT I DO
             </span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
-              Two Disciplines. One Seamless Execution.
+              Product Design First. Technical Execution When It Matters.
             </h2>
             <p className="mt-3 text-base text-neutral-600 leading-relaxed">
-              Clear separation between business web engineering and digital product interface design, united by end-to-end craftsmanship.
+              I design digital products around user needs and business goals, with a strong understanding of how those experiences are built on the web.
             </p>
           </div>
 
           {/* Two Large Interactive Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-            {/* CARD 01 — WEBSITES */}
+            {/* CARD 01 — PRODUCT DESIGN (PRIMARY) */}
             <div className="group flex flex-col justify-between rounded-2xl bg-[#FAFAFA] border border-neutral-200/90 p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:shadow-lg hover:border-neutral-300">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-neutral-400 uppercase tracking-widest">
                     CARD 01
                   </span>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-700 bg-neutral-200/70 px-2.5 py-1 rounded-full font-medium">
+                    <Smartphone className="w-3 h-3 text-neutral-600" />
+                    Digital Products & UI/UX
+                  </span>
+                </div>
+
+                <h3 className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
+                  Product Design
+                </h3>
+
+                <p className="mt-3 text-sm sm:text-base text-neutral-600 leading-relaxed">
+                  I design intuitive mobile applications, web platforms, and scalable design systems grounded in user research, clear flows, and thoughtful interaction design.
+                </p>
+
+                {/* Large Product/Mobile Preview Mockup */}
+                <div className="mt-6 rounded-xl overflow-hidden border border-neutral-200/80 shadow-xs">
+                  <ProjectMockupPreview
+                    projectId="magicpay"
+                    type="uiux"
+                    aspect="wide"
+                    altText="MagicPay product design case study preview"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-neutral-200 flex items-center justify-between">
+                <Link
+                  to="/ui-ux"
+                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-neutral-900 group-hover:text-neutral-600 transition-colors"
+                >
+                  <span>Explore Work</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+                <span className="text-xs text-neutral-400 font-mono">{UIUX_PROJECTS.length} Case Studies</span>
+              </div>
+            </div>
+
+            {/* CARD 02 — WEBSITES (SECONDARY) */}
+            <div className="group flex flex-col justify-between rounded-2xl bg-[#FAFAFA] border border-neutral-200/90 p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:shadow-lg hover:border-neutral-300">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-neutral-400 uppercase tracking-widest">
+                    CARD 02
+                  </span>
                   <span className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-600 bg-neutral-200/70 px-2.5 py-1 rounded-full">
-                    <Monitor className="w-3 h-3" />
-                    Business Websites
+                    <Monitor className="w-3 h-3 text-neutral-600" />
+                    Web Design & Development
                   </span>
                 </div>
 
@@ -135,7 +179,7 @@ export const HomePage: React.FC = () => {
                 </h3>
 
                 <p className="mt-3 text-sm sm:text-base text-neutral-600 leading-relaxed">
-                  I design and build modern websites that help businesses communicate their value, build credibility and grow online.
+                  I design and build modern websites that help businesses communicate their value, build credibility, and grow online with clean code and responsive layouts.
                 </p>
 
                 {/* Large Website Preview Mockup */}
@@ -160,63 +204,66 @@ export const HomePage: React.FC = () => {
                 <span className="text-xs text-neutral-400 font-mono">{WEBSITE_PROJECTS.length} Selected Projects</span>
               </div>
             </div>
-
-            {/* CARD 02 — UI/UX */}
-            <div className="group flex flex-col justify-between rounded-2xl bg-[#FAFAFA] border border-neutral-200/90 p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:shadow-lg hover:border-neutral-300">
-              <div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-neutral-400 uppercase tracking-widest">
-                    CARD 02
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-600 bg-neutral-200/70 px-2.5 py-1 rounded-full">
-                    <Smartphone className="w-3 h-3" />
-                    Digital Products
-                  </span>
-                </div>
-
-                <h3 className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
-                  UI/UX
-                </h3>
-
-                <p className="mt-3 text-sm sm:text-base text-neutral-600 leading-relaxed">
-                  I design digital products and interfaces around users, business goals and meaningful experiences.
-                </p>
-
-                {/* Large Product/Mobile Preview Mockup */}
-                <div className="mt-6 rounded-xl overflow-hidden border border-neutral-200/80 shadow-xs">
-                  <ProjectMockupPreview
-                    projectId="pacejet"
-                    type="uiux"
-                    aspect="wide"
-                    altText="UI/UX mobile app case study preview"
-                  />
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-neutral-200 flex items-center justify-between">
-                <Link
-                  to="/ui-ux"
-                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-neutral-900 group-hover:text-neutral-600 transition-colors"
-                >
-                  <span>Explore UI/UX</span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </Link>
-                <span className="text-xs text-neutral-400 font-mono">{UIUX_PROJECTS.length} Case Studies</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/* 3. SELECTED WEBSITES                                         */}
+      {/* 3. SELECTED WORK (PRODUCT DESIGN — PRIMARY)                  */}
+      {/* ============================================================ */}
+      <section className="py-20 lg:py-28 border-t border-neutral-200/80 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-4">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+                PORTFOLIO • DISCIPLINE 01
+              </span>
+              <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
+                Selected Work
+              </h2>
+              <p className="mt-2 text-base text-neutral-600">
+                Digital products designed to solve real problems and create simple, intuitive experiences.
+              </p>
+            </div>
+
+            <Link
+              to="/ui-ux"
+              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:text-neutral-600 transition-colors"
+            >
+              <span>Explore All Work</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          {/* 2x2 Case study grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {UIUX_PROJECTS.map((project) => (
+              <ProjectCard key={project.id} project={project} type="uiux" />
+            ))}
+          </div>
+
+          {/* Bottom Link */}
+          <div className="mt-14 text-center">
+            <Link
+              to="/ui-ux"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-neutral-900 bg-[#FAFAFA] border border-neutral-300 hover:bg-neutral-100 transition-all shadow-2xs"
+            >
+              <span>Explore All Work</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 4. SELECTED WEBSITES (SECONDARY CAPABILITY)                  */}
       {/* ============================================================ */}
       <section className="py-20 lg:py-28 border-t border-neutral-200/80 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-4">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
-                PORTFOLIO • DISCIPLINE 01
+                PORTFOLIO • DISCIPLINE 02
               </span>
               <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
                 Selected Websites
@@ -256,53 +303,6 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ============================================================ */}
-      {/* 4. SELECTED UI/UX WORK                                       */}
-      {/* ============================================================ */}
-      <section className="py-20 lg:py-28 border-t border-neutral-200/80 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-4">
-            <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-neutral-500">
-                PORTFOLIO • DISCIPLINE 02
-              </span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
-                Selected UI/UX Work
-              </h2>
-              <p className="mt-2 text-base text-neutral-600">
-                Digital products designed to solve real problems and create simple, intuitive experiences.
-              </p>
-            </div>
-
-            <Link
-              to="/ui-ux"
-              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-neutral-900 hover:text-neutral-600 transition-colors"
-            >
-              <span>Explore All UI/UX Work</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          {/* 2x2 Case study grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {UIUX_PROJECTS.map((project) => (
-              <ProjectCard key={project.id} project={project} type="uiux" />
-            ))}
-          </div>
-
-          {/* Bottom Link */}
-          <div className="mt-14 text-center">
-            <Link
-              to="/ui-ux"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-neutral-900 bg-[#FAFAFA] border border-neutral-300 hover:bg-neutral-100 transition-all shadow-2xs"
-            >
-              <span>Explore All UI/UX Work</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================ */}
       {/* 5. EXPERTISE / SKILLS                                        */}
       {/* ============================================================ */}
       <section className="py-20 lg:py-28 border-t border-neutral-200/80 bg-[#FAFAFA]">
@@ -315,29 +315,31 @@ export const HomePage: React.FC = () => {
               Expertise
             </h2>
             <p className="mt-2 text-base text-neutral-600">
-              A balanced discipline across interface design, code engineering, database structures, and rapid AI workflows.
+              A balanced discipline centered on Product Design, supported by responsive web development and technical understanding.
             </p>
           </div>
 
-          {/* 4 Skill Categories (No percentage bars!) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {/* 3 Skill Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {SKILL_CATEGORIES.map((cat, idx) => (
               <div
                 key={cat.title}
-                className="rounded-2xl bg-white border border-neutral-200/90 p-6 sm:p-8 transition-all duration-200 hover:border-neutral-300 hover:shadow-xs"
+                className="rounded-2xl bg-white border border-neutral-200/90 p-6 sm:p-8 transition-all duration-200 hover:border-neutral-300 hover:shadow-xs flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
-                  <h3 className="text-sm font-bold tracking-wider text-neutral-900">
-                    {cat.title}
-                  </h3>
-                  <span className="text-[11px] font-mono text-neutral-400">0{idx + 1}</span>
+                <div>
+                  <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
+                    <h3 className="text-sm font-bold tracking-wider text-neutral-900">
+                      {cat.title}
+                    </h3>
+                    <span className="text-[11px] font-mono text-neutral-400">0{idx + 1}</span>
+                  </div>
+
+                  <p className="mt-3 text-xs text-neutral-500 leading-relaxed">
+                    {cat.description}
+                  </p>
                 </div>
 
-                <p className="mt-3 text-xs text-neutral-500 leading-relaxed">
-                  {cat.description}
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-neutral-100">
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
@@ -354,7 +356,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ============================================================ */}
-      {/* 6. HOW I WORK (PROCESS)                                      */}
+      {/* 6. HOW I WORK (METHODOLOGY)                                  */}
       {/* ============================================================ */}
       <section className="py-20 lg:py-28 border-t border-neutral-200/80 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -366,15 +368,15 @@ export const HomePage: React.FC = () => {
               How I Work
             </h2>
             <p className="mt-2 text-base text-neutral-600">
-              A structured five-step approach ensuring alignment from discovery through production release.
+              A structured five-step product design methodology ensuring alignment from discovery through validation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {PROCESS_STEPS.map((step) => (
               <div
                 key={step.number}
-                className="relative rounded-xl bg-[#FAFAFA] border border-neutral-200/80 p-5 flex flex-col justify-between"
+                className="relative rounded-xl bg-[#FAFAFA] border border-neutral-200/80 p-5 flex flex-col justify-between hover:border-neutral-300 transition-colors"
               >
                 <div>
                   <span className="text-2xl font-black font-mono text-neutral-300">
@@ -390,7 +392,7 @@ export const HomePage: React.FC = () => {
 
                 <div className="mt-6 pt-4 border-t border-neutral-200/70 space-y-1.5">
                   <span className="text-[10px] font-mono uppercase text-neutral-400 tracking-wider">
-                    Deliverables
+                    Key Deliverables
                   </span>
                   <ul className="space-y-1">
                     {step.deliverables.slice(0, 2).map((item) => (
@@ -420,7 +422,7 @@ export const HomePage: React.FC = () => {
               How I Can Help
             </h2>
             <p className="mt-2 text-base text-neutral-600">
-              Specialized services tailored for businesses, funded startups, and design teams.
+              Product design and web development capabilities tailored for design teams, funded startups, and growing businesses.
             </p>
           </div>
 
@@ -486,13 +488,13 @@ export const HomePage: React.FC = () => {
                 ))}
               </div>
 
-              {/* End-to-end pill */}
+              {/* Product Design Process pill */}
               <div className="p-4 rounded-xl bg-[#FAFAFA] border border-neutral-200/80">
                 <span className="text-[11px] font-mono uppercase text-neutral-400 tracking-wider">
-                  Full Pipeline Ownership
+                  Product Design Focus with Technical Empathy
                 </span>
-                <p className="mt-1 text-xs text-neutral-700 font-medium">
-                  Concept → UX → UI → Development → Database → Deployment
+                <p className="mt-1 text-xs text-neutral-800 font-semibold font-mono">
+                  RESEARCH → UX → UI → PROTOTYPE → ITERATE
                 </p>
               </div>
 

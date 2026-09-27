@@ -35,13 +35,13 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-mono uppercase tracking-widest text-neutral-400">Navigation</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/websites" className="text-neutral-600 hover:text-neutral-950 transition-colors">
-                  Websites
+                <Link to="/ui-ux" className="text-neutral-600 hover:text-neutral-950 transition-colors">
+                  Work
                 </Link>
               </li>
               <li>
-                <Link to="/ui-ux" className="text-neutral-600 hover:text-neutral-950 transition-colors">
-                  UI/UX Work
+                <Link to="/websites" className="text-neutral-600 hover:text-neutral-950 transition-colors">
+                  Websites
                 </Link>
               </li>
               <li>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>© 2026 Isaiah. All rights reserved.</p>
           <p className="font-mono text-[11px] text-neutral-400">
-            Concept → UX → UI → Development → Database → Deployment
+            RESEARCH → UX → UI → PROTOTYPE → ITERATE
           </p>
         </div>
       </div>

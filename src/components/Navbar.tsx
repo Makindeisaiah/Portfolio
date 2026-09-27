@@ -22,8 +22,8 @@ export const Navbar: React.FC = () => {
   }, [location.pathname]);
 
   const navLinks = [
+    { label: 'Work', path: '/ui-ux' },
     { label: 'Websites', path: '/websites' },
-    { label: 'UI/UX', path: '/ui-ux' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
   ];
@@ -55,7 +55,7 @@ export const Navbar: React.FC = () => {
             </span>
             <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-neutral-400 group-hover:bg-neutral-900 transition-colors" />
             <span className="hidden sm:inline-block text-xs text-neutral-500 font-medium tracking-wide">
-              Product & Builder
+              Product Designer
             </span>
           </Link>
 
