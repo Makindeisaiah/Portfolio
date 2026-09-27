@@ -14,10 +14,10 @@ import {
 import { CaseStudyImageArea } from '../casestudy/CaseStudyImageArea';
 
 export const PaceJetDiscovery: React.FC = () => {
-  // Local editable research findings with localStorage persistence
+  // Local editable discovery findings with localStorage persistence
   const defaultFindings = [
-    'Users experienced significant friction when landing fees and fuel surcharges were separated from base charter estimates.',
-    'Cabin layout and luggage dimensions were critical decision factors that travelers previously could not evaluate on mobile.',
+    'Evaluating booking scenarios revealed significant friction when landing fees and fuel surcharges were separated from base charter estimates.',
+    'Cabin layout and luggage dimensions emerged as critical decision factors that travelers needed to evaluate on mobile.',
     'Booking confidence required upfront confirmation of FBO terminal location and guaranteed flight departure times.',
   ];
 
@@ -70,7 +70,7 @@ export const PaceJetDiscovery: React.FC = () => {
         <div className="space-y-4 max-w-3xl">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#1E7B21]">
             <span className="w-2 h-0.5 bg-[#2EB732]" />
-            <span>08 / Qualitative Discovery</span>
+            <span>08 / Discovery &amp; Analysis</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-sans font-bold tracking-tight text-[#1E1E1E]">
             Research &amp; Discovery
@@ -107,7 +107,7 @@ export const PaceJetDiscovery: React.FC = () => {
         <div className="p-6 sm:p-8 rounded-2xl bg-emerald-50/40 border border-emerald-200/60 space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-mono uppercase tracking-wider text-[#1E7B21] font-bold">
-              Key Research Findings
+              Key Discovery Insights
             </h3>
             <span className="text-[11px] font-mono text-neutral-600">
               Interactive · Click pencil to edit

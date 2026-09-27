@@ -59,7 +59,7 @@ export const PaceJetCaseStudyPage: React.FC = () => {
     { label: 'Research', href: '#research' },
     { label: 'Design System', href: '#direction' },
     { label: 'Core Features', href: '#discovery' },
-    { label: 'Testing', href: '#testing' },
+    { label: 'Review & Iteration', href: '#testing' },
     { label: '150+ Screens', href: '#showcase-screens' },
     { label: 'Takeaways', href: '#takeaways' },
   ];

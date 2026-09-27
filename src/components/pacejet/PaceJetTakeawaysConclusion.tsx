@@ -37,10 +37,10 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
           </h2>
           <div className="space-y-3 text-base sm:text-lg text-neutral-700 leading-relaxed">
             <p>
-              With 150+ screens, the product needed a system that could support consistency as the experience grew.
+              With 150+ screens and states, PaceJet required a reusable system that could maintain consistency as the product expanded.
             </p>
             <p>
-              The design system codified reusable rules for Typography, Colors, Buttons, Inputs, Cards, Navigation, Icons, Controls, and Interactive States.
+              The design system established reusable rules and components for typography, color, buttons, inputs, cards, navigation, icons, controls, and interactive states.
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
             </div>
             <h3 className="text-lg font-bold text-neutral-900">Designing Complex Products</h3>
             <p className="text-sm text-neutral-600 leading-relaxed">
-              Complex products become easier to use when information is structured around the user's decisions, rather than dumping all aviation parameters onto a single screen.
+              Complex products become easier to use when information is structured around the user's decisions rather than presenting every available parameter at once.
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
             </div>
             <h3 className="text-lg font-bold text-neutral-900">Consistency at Scale</h3>
             <p className="text-sm text-neutral-600 leading-relaxed">
-              A design system becomes essential when working across a large number of screens. Strict tokens eliminate subjective guesswork and maintain quality across edge cases.
+              Working across 150+ screens reinforced the importance of reusable components, tokens, and interaction patterns for maintaining consistency.
             </p>
           </div>
 
@@ -125,9 +125,9 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
               <span className="text-xs font-mono font-bold text-[#1E7B21]">TAKEAWAY 03</span>
               <ShieldCheck className="w-4 h-4 text-neutral-400" />
             </div>
-            <h3 className="text-lg font-bold text-neutral-900">Clarity Builds Trust</h3>
+            <h3 className="text-lg font-bold text-neutral-900">Clarity Builds Confidence</h3>
             <p className="text-sm text-neutral-600 leading-relaxed">
-              Clear pricing, itinerary, aircraft information, and payment states help users feel more confident, directly lowering abandonment in high-value private charter transactions.
+              Clear pricing, itinerary information, aircraft details, and payment states can make high-value booking experiences easier to understand and navigate.
             </p>
           </div>
 
@@ -138,7 +138,7 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
             </div>
             <h3 className="text-lg font-bold text-neutral-900">Premium Does Not Mean Complicated</h3>
             <p className="text-sm text-neutral-600 leading-relaxed">
-              A premium interface can remain simple, focused, and easy to navigate. Craft comes from refined typography, balanced whitespace, and dependable functionality.
+              A premium interface can remain simple, focused, and easy to navigate. Refinement comes from hierarchy, typography, spacing, and dependable interaction patterns.
             </p>
           </div>
         </div>
@@ -160,16 +160,16 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
 
         <div className="p-8 sm:p-10 rounded-2xl bg-white border border-neutral-200/90 shadow-2xs space-y-6 text-base sm:text-lg text-neutral-700 leading-relaxed max-w-4xl">
           <p>
-            PaceJet challenged me to think beyond individual screens and focus on the experience as a complete product.
+            PaceJet challenged me to think beyond individual screens and design the experience as a complete product.
           </p>
           <p>
-            The project involved restructuring a large mobile application, organizing complex booking information, designing reusable components, and creating a consistent visual language across more than 150 screens.
+            The project involved restructuring a large mobile application, organizing complex aviation booking information, designing reusable components, and creating a consistent visual language across more than 150 screens and states.
           </p>
           <p>
-            The final experience brings together aircraft discovery, charter and seat booking, quotes, payment, deals, and trip management within a more structured and premium mobile experience.
+            The final experience brings together aircraft discovery, charter and seat booking, quotes, payment, deals, itinerary, and trip management within a structured mobile experience.
           </p>
           <p>
-            More importantly, the project strengthened my approach to product design by showing me that strong UI is not only about visual polish. It is about creating systems that help users understand information, make decisions, and complete important tasks with confidence.
+            More importantly, the project strengthened my approach to product design by showing me that strong UI is not only about visual polish. It is about creating systems that help people understand information, make decisions, and complete important tasks with confidence.
           </p>
         </div>
 
@@ -202,7 +202,7 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
             </div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2EB732]/20 border border-[#2EB732]/40 text-[#2EB732] text-xs font-mono">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2EB732]" />
-              <span>Status: Completed</span>
+              <span>Status: Design Completed</span>
             </div>
           </div>
 

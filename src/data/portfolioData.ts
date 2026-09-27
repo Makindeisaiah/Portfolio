@@ -403,11 +403,11 @@ export const UIUX_PROJECTS: UIUXProject[] = [
       'Booking private air charters has traditionally required archaic back-and-forth broker phone calls, opaque pricing structures, and confusing aircraft categorization. High-value clients and executive assistants wasted hours obtaining empty-leg quotes and coordinating tarmac itineraries.',
     research: {
       summary:
-        'Conducted contextual interviews with 14 frequent private jet travelers and 6 corporate executive assistants. Analyzed competing charter applications and broker communication workflows.',
+        'Analyzed the operational requirements of private aviation booking, evaluating competitor workflows, charter inquiry friction, and complex booking scenarios.',
       keyFindings: [
-        '83% of users cited hidden landing fees and aircraft availability ambiguity as the top source of booking friction',
-        'Empty-leg flight opportunities were viewed as high-value but difficult to monitor in real-time',
-        'Passenger manifests and special catering requests were frequently miscommunicated through fragmented email threads',
+        'Hidden landing fees, fuel surcharges, and ambiguous estimates represent the primary source of booking friction',
+        'Empty-leg flight opportunities require prominent, real-time discovery to facilitate fast booking',
+        'Passenger manifests, FBO terminal coordinates, and itinerary details are critical for seamless travel execution',
       ],
       userPainPoints: [
         'Lack of upfront transparent guaranteed pricing',
@@ -421,7 +421,7 @@ export const UIUX_PROJECTS: UIUXProject[] = [
       quote: '"I need to book an empty-leg jet to Zurich in three taps without waiting 4 hours for a broker to call back."',
       goals: [
         'Instant visibility into guaranteed charter rates and certified aircraft availability',
-        'Seamless biometric payment and automatic invoice forwarding to family office',
+        'Seamless payment and automatic invoice forwarding to family office',
         'Consolidated FBO (Private Terminal) directions and boarding pass access',
       ],
       frustrations: [
@@ -551,14 +551,14 @@ export const UIUX_PROJECTS: UIUXProject[] = [
       {
         before: 'Passport entry required typing 9 separate fields manually',
         after: 'Integrated auto-scan camera OCR with instant validation and saved traveler vaults',
-        reasoning: 'Eliminated manual typing errors and reduced check-in setup by over 70%',
+        reasoning: 'Eliminated manual typing friction and simplified passenger detail entry',
       },
     ],
     finalExperience:
       'PaceJet delivers an uncompromising private flight booking experience that strips away broker delays and gives travelers total control over their time and flight arrangements.',
     outcome: {
-      businessImpact: 'Charter conversion rate increased by 42% over benchmark broker inquiry flows.',
-      userFeedback: 'Described by executive assistants as "the first private aviation tool that actually respects our time."',
+      businessImpact: 'Created a structured, end-to-end mobile booking architecture across 150+ screens and states, establishing a unified design system for private aviation.',
+      userFeedback: 'Design reviews highlighted significant improvements in pricing transparency, aircraft comparison ease, and itinerary comprehension.',
     },
     keyLearnings: [
       'High-net-worth users value clarity and speed far more than decorative animations',

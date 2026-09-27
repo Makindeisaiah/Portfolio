@@ -52,8 +52,8 @@ export const PaceJetHero: React.FC<PaceJetHeroProps> = ({ onOpenPrototype }) => 
             </div>
             <div>
               <span className="text-[10px] font-mono uppercase text-neutral-600 tracking-wider block">Screens</span>
-              <span className="text-xs font-semibold text-[#1E7B21] block mt-0.5">150+ Mobile</span>
-              <span className="text-[11px] text-neutral-700">Screen States</span>
+              <span className="text-xs font-semibold text-[#1E7B21] block mt-0.5">150+ Screens</span>
+              <span className="text-[11px] text-neutral-700">&amp; States</span>
             </div>
             <div>
               <span className="text-[10px] font-mono uppercase text-neutral-600 tracking-wider block">Project</span>
@@ -64,7 +64,7 @@ export const PaceJetHero: React.FC<PaceJetHeroProps> = ({ onOpenPrototype }) => 
               <span className="text-[10px] font-mono uppercase text-neutral-600 tracking-wider block">Status</span>
               <span className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-900 mt-0.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2EB732]" />
-                Completed
+                Design Completed
               </span>
               <span className="text-[11px] text-neutral-700 block">Production Ready</span>
             </div>
@@ -102,7 +102,7 @@ export const PaceJetHero: React.FC<PaceJetHeroProps> = ({ onOpenPrototype }) => 
             allowMultiple={false}
           />
           <p className="text-xs text-neutral-600 font-mono text-center">
-            PaceJet Mobile Experience — Core navigation, aircraft charter discovery, transparent pricing quote, and biometric booking.
+            PaceJet Mobile Experience — Core navigation, aircraft charter discovery, transparent pricing quote, and payment booking.
           </p>
         </div>
       </section>
@@ -152,11 +152,11 @@ export const PaceJetHero: React.FC<PaceJetHeroProps> = ({ onOpenPrototype }) => 
           </div>
           <div className="space-y-1">
             <span className="text-xs font-mono uppercase text-neutral-600">Screens</span>
-            <p className="text-sm font-semibold text-[#1E7B21]">150+ screens</p>
+            <p className="text-sm font-semibold text-[#1E7B21]">150+ Screens &amp; States</p>
           </div>
           <div className="space-y-1">
             <span className="text-xs font-mono uppercase text-neutral-600">Status</span>
-            <p className="text-sm font-semibold text-neutral-900">Completed</p>
+            <p className="text-sm font-semibold text-neutral-900">Design Completed</p>
           </div>
         </div>
 

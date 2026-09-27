@@ -13,19 +13,20 @@ import {
 import { CaseStudyImageArea } from '../casestudy/CaseStudyImageArea';
 
 export const PaceJetTestingIterations: React.FC = () => {
-  // Local editable testing insights with localStorage persistence
-  const defaultTestingInsights = [
-    'Participants identified flight quotes faster when taxes and fees were itemized directly beneath the basic charter price.',
-    'Separating the booking flow into distinct, labeled phases reduced cognitive overwhelm during aircraft selection.',
-    'Adding quick passenger manifest auto-fill significantly accelerated return-trip reservations.',
+  // Local editable design observations with localStorage persistence
+  const defaultDesignObservations = [
+    'Breaking complex booking information into focused steps makes the journey easier to scan and reduces the amount of information users need to process at once.',
+    'Separating base pricing from additional fees creates a clearer view of the total booking cost before payment.',
+    'Aircraft cards were refined to prioritize decision-making information such as cabin configuration, passenger capacity, range, and flight duration.',
+    'Persistent navigation was simplified around the product\'s primary destinations: Book, Deals, Trips, and Profile.',
   ];
 
   const [testingInsights, setTestingInsights] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('pacejet_testing_insights');
+      const saved = localStorage.getItem('pacejet_design_observations');
       if (saved) return JSON.parse(saved);
     } catch {}
-    return defaultTestingInsights;
+    return defaultDesignObservations;
   });
 
   const [editingInsightIdx, setEditingInsightIdx] = useState<number | null>(null);
@@ -33,11 +34,11 @@ export const PaceJetTestingIterations: React.FC = () => {
 
   const handleSaveInsight = (idx: number) => {
     const updated = [...testingInsights];
-    updated[idx] = tempInsightText.trim() || defaultTestingInsights[idx];
+    updated[idx] = tempInsightText.trim() || defaultDesignObservations[idx];
     setTestingInsights(updated);
     setEditingInsightIdx(null);
     try {
-      localStorage.setItem('pacejet_testing_insights', JSON.stringify(updated));
+      localStorage.setItem('pacejet_design_observations', JSON.stringify(updated));
     } catch {}
   };
 
@@ -65,19 +66,19 @@ export const PaceJetTestingIterations: React.FC = () => {
   return (
     <div className="space-y-28 lg:space-y-36">
       {/* ========================================================================= */}
-      {/* 23. TESTING                                                               */}
+      {/* 23. DESIGN REVIEW & ITERATION                                             */}
       {/* ========================================================================= */}
       <section id="testing" className="space-y-12">
         <div className="space-y-4 max-w-3xl">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#1E7B21]">
             <span className="w-2 h-0.5 bg-[#2EB732]" />
-            <span>22 / Usability Validation</span>
+            <span>22 / Review &amp; Evaluation</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-sans font-bold tracking-tight text-[#1E1E1E]">
-            Testing &amp; Iteration
+            Design Review &amp; Iteration
           </h2>
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-            Testing sessions were conducted to review the clarity, scannability, and operational usability of the restructured experience.
+            I reviewed the redesigned experience across key booking scenarios, focusing on navigation clarity, booking progression, pricing transparency, aircraft comparison, itinerary comprehension, payment confidence, and system-wide consistency.
           </p>
         </div>
 
@@ -90,10 +91,10 @@ export const PaceJetTestingIterations: React.FC = () => {
             {[
               { label: 'Navigation', desc: 'Bottom tab accessibility' },
               { label: 'Booking Flow', desc: 'Step progression clarity' },
-              { label: 'Aircraft Selection', desc: 'Cabin compare ease' },
+              { label: 'Aircraft Selection', desc: 'Cabin and aircraft comparison ease' },
               { label: 'Pricing Comprehension', desc: 'Itemized fee scanning' },
               { label: 'Itinerary Comprehension', desc: 'FBO terminal readability' },
-              { label: 'Payment Flow', desc: 'Confidence at authorization' },
+              { label: 'Payment Flow', desc: 'Confidence before authorization' },
               { label: 'Consistency', desc: 'System-wide visual harmony' },
             ].map((area, i) => (
               <div key={i} className="p-3.5 rounded-xl bg-neutral-50 border border-neutral-200/60 space-y-1">
@@ -105,11 +106,11 @@ export const PaceJetTestingIterations: React.FC = () => {
           </div>
         </div>
 
-        {/* Editable Testing Insights Subsection */}
+        {/* Editable Design Observations Subsection */}
         <div className="p-6 sm:p-8 rounded-2xl bg-emerald-50/40 border border-emerald-200/60 space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-mono uppercase tracking-wider text-[#1E7B21] font-bold">
-              Key Testing Insights
+              Key Design Observations
             </h3>
             <span className="text-[11px] font-mono text-neutral-600">
               Interactive · Click pencil to edit
@@ -136,7 +137,7 @@ export const PaceJetTestingIterations: React.FC = () => {
                         onClick={() => handleSaveInsight(idx)}
                         className="px-3 py-1 rounded bg-[#2EB732] text-white text-xs font-mono"
                       >
-                        Save Insight
+                        Save Observation
                       </button>
                       <button
                         type="button"
@@ -162,7 +163,7 @@ export const PaceJetTestingIterations: React.FC = () => {
                         setTempInsightText(insight);
                       }}
                       className="text-neutral-400 hover:text-neutral-900 p-1 transition-colors shrink-0"
-                      title="Edit this testing insight"
+                      title="Edit this design observation"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
                     </button>
@@ -173,13 +174,13 @@ export const PaceJetTestingIterations: React.FC = () => {
           </div>
         </div>
 
-        {/* Testing Image */}
+        {/* Review Image */}
         <div className="space-y-2">
           <CaseStudyImageArea
             storageKey="testing_artifacts_board"
             storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Testing screens / usability testing / iterations"
-            description="Documentation of prototype testing sessions, user feedback notes, and design evolution."
+            placeholderLabel="UPLOAD IMAGE — Design review notes / evaluation / iterations"
+            description="Documentation of design evaluation, scenario reviews, and layout evolution."
             aspectRatio="16/9"
             defaultFit="cover"
             allowMultiple={false}
@@ -200,7 +201,7 @@ export const PaceJetTestingIterations: React.FC = () => {
             From Feedback to Refinement
           </h2>
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-            The design was refined by improving hierarchy, spacing, component consistency, typography, and the presentation of important booking information.
+            The experience evolved through design review and iteration, with each pass focused on improving hierarchy, spacing, component consistency, typography, and the presentation of important booking information.
           </p>
         </div>
 
@@ -253,7 +254,7 @@ export const PaceJetTestingIterations: React.FC = () => {
             <span className="text-[10px] font-mono font-bold text-[#1E7B21]">ITERATION 01</span>
             <h3 className="text-sm font-bold text-neutral-900">Booking Progression</h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Transitioned from an endless scrolling form into focused chunked steps with sticky bottom validation.
+              Transitioned from an endless scrolling form into focused, chunked steps with clear progression and persistent validation.
             </p>
           </div>
 
@@ -261,7 +262,7 @@ export const PaceJetTestingIterations: React.FC = () => {
             <span className="text-[10px] font-mono font-bold text-[#1E7B21]">ITERATION 02</span>
             <h3 className="text-sm font-bold text-neutral-900">Pricing Transparency</h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Isolated airport fees and fuel surcharges into dedicated line items, eliminating surprise costs at payment.
+              Separated airport fees, fuel surcharges, and other additional costs into clearer line items so the total price could be understood before payment.
             </p>
           </div>
 
@@ -269,7 +270,7 @@ export const PaceJetTestingIterations: React.FC = () => {
             <span className="text-[10px] font-mono font-bold text-[#1E7B21]">ITERATION 03</span>
             <h3 className="text-sm font-bold text-neutral-900">Aircraft Card Density</h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Prioritized cabin cross-sections, seat limits, and flight times over non-essential aviation technical jargon.
+              Prioritized decision-making information such as cabin configuration, passenger capacity, and flight duration while reducing unnecessary technical detail.
             </p>
           </div>
 
@@ -277,7 +278,7 @@ export const PaceJetTestingIterations: React.FC = () => {
             <span className="text-[10px] font-mono font-bold text-[#1E7B21]">ITERATION 04</span>
             <h3 className="text-sm font-bold text-neutral-900">Navigation Alignment</h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Simplified the app shell to four persistent pillars (Book, Deals, Trips, Profile) for frictionless wayfinding.
+              Simplified the app structure around four persistent destinations: Book, Deals, Trips, and Profile.
             </p>
           </div>
         </div>
@@ -296,7 +297,7 @@ export const PaceJetTestingIterations: React.FC = () => {
             The Final Experience
           </h2>
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-            The final PaceJet experience brings together the major parts of the private aviation journey into one consistent, premium mobile product.
+            The final PaceJet experience brings the major parts of the private aviation journey into one consistent mobile product, connecting aircraft discovery, booking, quotes, payment, deals, and trip management through a unified interface.
           </p>
         </div>
 
@@ -347,7 +348,7 @@ export const PaceJetTestingIterations: React.FC = () => {
             150+ Screens
           </h2>
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-            PaceJet was a large-scale mobile product design project with more than 150 screens across different user journeys, edge cases, authentication states, and operational product states.
+            PaceJet was a large-scale mobile product design project spanning more than 150 screens and states across multiple user journeys, booking scenarios, authentication states, edge cases, and operational product states.
           </p>
         </div>
 

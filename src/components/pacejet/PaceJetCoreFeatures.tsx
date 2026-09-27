@@ -225,7 +225,7 @@ export const PaceJetCoreFeatures: React.FC = () => {
             Clarifying the Journey
           </h2>
           <p className="text-base sm:text-lg text-neutral-700 leading-relaxed">
-            The itinerary component organizes travel information into a compact, high-contrast structure that allows users to quickly understand flight milestones, private FBO terminals, and passenger manifests.
+            The itinerary component organizes critical travel information into a compact structure that allows users to quickly understand departure and arrival details, FBO information, flight timing, duration, and passenger information.
           </p>
         </div>
 
@@ -274,17 +274,14 @@ export const PaceJetCoreFeatures: React.FC = () => {
         <div className="space-y-4 max-w-3xl">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#1E7B21]">
             <span className="w-2 h-0.5 bg-[#2EB732]" />
-            <span>21 / Checkout &amp; Security</span>
+            <span>21 / Checkout Experience</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-sans font-bold tracking-tight text-[#1E1E1E]">
             A Clearer Payment Experience
           </h2>
           <div className="space-y-3 text-base sm:text-lg text-neutral-700 leading-relaxed">
             <p>
-              The payment experience was designed to make high-value aviation transactions easy to review, secure, and transparent before completing a booking.
-            </p>
-            <p>
-              With corporate cards, family office accounts, and biometric confirmation, users feel completely in control of their authorization.
+              The payment experience was designed to make high-value aviation transactions easier to review before authorization. The interface prioritizes clear payment information, validation states, saved payment methods, and confirmation before completing a booking.
             </p>
           </div>
         </div>
@@ -292,16 +289,16 @@ export const PaceJetCoreFeatures: React.FC = () => {
         {/* Payment Components Grid */}
         <div className="p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200/90 shadow-2xs space-y-6">
           <span className="text-xs font-mono uppercase tracking-wider text-neutral-500 block">
-            Verified Payment Flow Elements
+            Payment Flow Elements
           </span>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-xs">
             {[
-              { title: 'Card Number', desc: 'Auto-formatting & card type detection' },
+              { title: 'Card Number', desc: 'Auto-formatting and card type detection' },
               { title: 'Expiry Date', desc: 'Masked MM/YY input validation' },
-              { title: 'CVV Security', desc: 'Secure entry with contextual tooltip' },
-              { title: 'Card Holder', desc: 'Full legal name on passenger account' },
-              { title: 'Saved Cards', desc: '1-tap biometric selection for repeat flyers' },
-              { title: 'Verification State', desc: '3D-Secure modal & immediate booking receipt' },
+              { title: 'CVV Security', desc: 'Secure entry with contextual guidance' },
+              { title: 'Card Holder', desc: 'Full legal name associated with the payment method' },
+              { title: 'Saved Cards', desc: 'Quick selection for repeat bookings' },
+              { title: 'Verification State', desc: 'Clear confirmation after payment authorization' },
             ].map((p, i) => (
               <div key={i} className="p-4 rounded-xl bg-neutral-50 border border-neutral-200/60 space-y-1">
                 <span className="text-[10px] font-mono font-bold text-[#1E7B21]">0{i + 1}</span>

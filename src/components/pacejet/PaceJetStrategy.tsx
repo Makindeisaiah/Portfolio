@@ -173,7 +173,7 @@ export const PaceJetStrategy: React.FC = () => {
               { label: 'Navigation Design', desc: 'Bottom navigation, modal sheets, and contextual headers' },
               { label: 'Booking-Flow Design', desc: 'One-way, return, and multi-leg configuration pathways' },
               { label: 'Payment-Flow Design', desc: 'Transparent flight quotes, card handling, and receipt review' },
-              { label: 'Usability Testing', desc: 'Validating flight selection clarity and pricing transparency' },
+              { label: 'Design Review & Evaluation', desc: 'Evaluating flight selection clarity and pricing transparency' },
               { label: 'Design Iteration', desc: 'Refining spacing, typography scales, and state feedbacks' },
               { label: 'Case Study Development', desc: 'Documenting design decisions and architectural learnings' },
             ].map((resp, i) => (
@@ -285,7 +285,7 @@ export const PaceJetStrategy: React.FC = () => {
             </div>
             <h3 className="text-base font-bold text-neutral-900">Payments</h3>
             <p className="text-xs text-neutral-600 leading-relaxed">
-              Users can securely add and manage credit/debit cards, verify biometric authorization, and complete instant flight payment.
+              Users can securely add and manage credit/debit cards, verify payment authorization, and complete flight payment.
             </p>
           </div>
 
@@ -441,7 +441,7 @@ export const PaceJetStrategy: React.FC = () => {
               { step: '04', title: 'Review Quote', desc: 'Taxes & total' },
               { step: '05', title: 'Confirm Itinerary', desc: 'FBO & terminal' },
               { step: '06', title: 'Payment Method', desc: 'Card selection' },
-              { step: '07', title: 'Complete Booking', desc: 'Biometric authorization' },
+              { step: '07', title: 'Complete Booking', desc: 'Review & authorization' },
               { step: '08', title: 'Manage Trip', desc: 'Live pass & tracking' },
             ].map((f, idx) => (
               <div
