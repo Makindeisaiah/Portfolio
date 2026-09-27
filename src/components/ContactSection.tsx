@@ -217,7 +217,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                         <span>Sending Brief...</span>
                       ) : (
                         <>
-                          <span>Submit Brief</span>
+                          <span>SUBMIT BRIEF</span>
                           <Send className="w-3.5 h-3.5" />
                         </>
                       )}
