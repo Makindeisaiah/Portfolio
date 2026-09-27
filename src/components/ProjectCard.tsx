@@ -16,7 +16,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, type }) => {
   const uiux = !isWebsite ? (project as UIUXProject) : null;
 
   const detailUrl = isWebsite ? `/websites/${project.id}` : `/ui-ux/${project.id}`;
-  const ctaText = isWebsite ? 'View Project' : 'View Case Study';
+  const ctaText = isWebsite ? 'VIEW PROJECT' : 'VIEW CASE STUDY';
 
   return (
     <div className="group flex flex-col justify-between rounded-2xl bg-white border border-neutral-200/90 p-5 sm:p-6 transition-all duration-300 hover:shadow-md hover:border-neutral-300">
@@ -83,10 +83,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, type }) => {
             href={isWebsite ? website?.liveUrl : uiux?.liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="text-[11px] font-mono text-neutral-500 hover:text-neutral-900 transition-colors inline-flex items-center gap-1 font-medium bg-neutral-100 hover:bg-neutral-200/80 px-2.5 py-1 rounded-full border border-neutral-200/80"
+            className="text-[11px] font-mono text-neutral-500 hover:text-neutral-900 transition-colors inline-flex items-center gap-1 font-semibold uppercase tracking-wider bg-neutral-100 hover:bg-neutral-200/80 px-2.5 py-1 rounded-full border border-neutral-200/80"
             title="Visit live website"
           >
-            <span>Live site</span>
+            <span>LIVE SITE</span>
             <ArrowUpRight className="w-3 h-3" />
           </a>
         )}

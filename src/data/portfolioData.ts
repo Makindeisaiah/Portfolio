@@ -48,7 +48,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     tagline: 'Refined digital presence for luxury interior architecture',
     description:
       'A refined digital presence for a luxury interior architecture and design studio based in Lagos.',
-    tags: ['Website Design', 'Development', 'Responsive Design'],
+    tags: ['Web Design', 'Development', 'Responsive'],
     year: '2026',
     role: 'Lead Designer & Frontend Developer',
     tools: ['Figma', 'React', 'Tailwind CSS', 'Motion'],
@@ -61,8 +61,8 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
       'OMONY Atelier Studios needed an editorial web experience that could convey architectural restraint, spatial harmony, and artisanal material craftsmanship without slow loading times or cluttered navigation.',
     goals: [
       'Showcase spatial portfolio photography with bespoke aspect ratios and fluid transitions',
-      'Establish a quiet, confident luxury aesthetic that appeals to high-net-worth residential and commercial clientele',
-      'Ensure sub-second page loads across both high-resolution desktop monitors and mobile devices',
+      'Establish a quiet, confident luxury aesthetic that appeals to residential and commercial clientele',
+      'Ensure fast page loads across both desktop monitors and mobile devices',
     ],
     designDirection: {
       typography: 'Manrope paired with generous letter-spacing, restrained scales, and deep charcoal body text.',
@@ -91,18 +91,18 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
       },
       {
         title: 'Mobile Consultation Booking Flow',
-        description: 'Frictionless studio consultation scheduler optimized for one-hand mobile browsing.',
+        description: 'Frictionless studio consultation scheduler optimized for mobile browsing.',
         type: 'mobile',
       },
     ],
     responsiveFeatures: [
-      'Fluid typographic clamp ensuring headlines scale smoothly from 320px to 4K displays',
+      'Fluid typographic clamp ensuring headlines scale smoothly from 320px to wide displays',
       'Smart aspect-ratio preservation for architectural photographs preventing visual distortion',
-      'Collapsible minimal navigation drawer with smooth spring physics',
+      'Collapsible minimal navigation drawer with smooth physics',
     ],
     developmentHighlights: [
       'Built with modern semantic markup and CSS grid for lightweight rendering',
-      'Zero layout shift (CLS 0.0) with precalculated image dimensions',
+      'Precalculated image dimensions to prevent layout shifts',
       'Accessible WCAG AA contrast compliance across all ambient backgrounds',
     ],
     finalWebsiteOverview:
@@ -115,8 +115,8 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     category: 'Property Management',
     tagline: 'Trust-centric digital platform for residential & commercial assets',
     description:
-      'A professional property management website designed to communicate services, build trust and improve the company’s digital presence.',
-    tags: ['Website Design', 'UX/UI', 'Development'],
+      'A professional property management website designed to communicate services, build trust, and improve the company\'s digital presence.',
+    tags: ['Web Design', 'UX/UI', 'Development'],
     year: '2026',
     role: 'UI/UX Designer & Web Developer',
     tools: ['Figma', 'HTML5', 'Tailwind CSS', 'JavaScript'],
@@ -174,17 +174,17 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
       'Structured schema.org RealEstateAgent metadata for search engine indexing',
     ],
     finalWebsiteOverview:
-      'Validreams achieved a modern, authoritative online presence that reduced tenant onboarding friction and substantially increased monthly landlord inquiries.',
+      'Validreams achieved a modern online presence that reduced tenant onboarding friction and improved landlord inquiries.',
     technologies: ['HTML5', 'Tailwind CSS', 'JavaScript ES6', 'PHP Forms', 'Vercel'],
   },
   {
     id: 'koikimedia-international-news',
     title: 'KoikiMedia International News',
     category: 'News & Media',
-    tagline: 'Fast, modern digital publishing experience for global breaking news',
+    tagline: 'Modern digital publishing experience for global news',
     description:
       'A modern digital publishing experience designed for an international news platform.',
-    tags: ['Website Design', 'WordPress', 'Publishing'],
+    tags: ['Web Design', 'WordPress', 'Publishing'],
     year: '2026',
     role: 'Digital Product Designer & WordPress Developer',
     tools: ['Figma', 'WordPress', 'PHP', 'CSS3', 'REST API'],
@@ -227,7 +227,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
       },
       {
         title: 'Mobile Reader Feed',
-        description: 'Ultra-fast mobile feed with offline cache capabilities for low-bandwidth reading.',
+        description: 'Fast mobile feed with offline cache capabilities for low-bandwidth reading.',
         type: 'mobile',
       },
     ],
@@ -239,20 +239,20 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     developmentHighlights: [
       'Custom lightweight WordPress theme without bloat plugins',
       'Integrated Cloudflare CDN caching for peak breaking news traffic spikes',
-      'Full AMP and Open Graph publishing integration for viral social distribution',
+      'Full AMP and Open Graph publishing integration for social distribution',
     ],
     finalWebsiteOverview:
-      'KoikiMedia transformed its global digital readership, handling millions of monthly page views with zero downtime and a significant rise in reader retention.',
+      'KoikiMedia transformed its global digital readership, handling regular daily page views with high stability and reader retention.',
     technologies: ['WordPress Engine', 'Custom PHP', 'Tailwind CSS', 'REST API', 'Cloudflare'],
   },
   {
     id: 'ziba-innovation',
-    title: 'Ziba Innovation',
+    title: 'Ziba Innovation Website',
     category: 'Digital Innovation & Fintech',
     tagline: 'Modern digital web presence for enterprise payments & innovation',
     description:
-      'A cutting-edge digital presence designed for Ziba Innovation, showcasing modern financial infrastructure, payment services, and business solutions.',
-    tags: ['Website Design', 'Fintech', 'Development'],
+      'A digital presence designed for Ziba Innovation, presenting its technology, financial services, and business solutions.',
+    tags: ['Web Design', 'Fintech', 'Development'],
     year: '2026',
     role: 'Product Designer & Frontend Developer',
     tools: ['Figma', 'React', 'Tailwind CSS', 'TypeScript'],
@@ -262,11 +262,11 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     heroImage: '/images/projects/ziba-innovation/hero.jpg',
     accentColor: '#2563EB', // Electric royal blue
     challenge:
-      'Ziba Innovation required a credible, high-converting corporate web presence to introduce its next-generation payment infrastructure, API capabilities, and merchant solutions to enterprise partners and fast-growing businesses.',
+      'Ziba Innovation required a clear corporate web presence to introduce its payment infrastructure, API capabilities, and merchant solutions to enterprise partners and businesses.',
     goals: [
-      'Communicate bank-grade security, instantaneous settlement speeds, and simple API integration',
-      'Build an interactive solutions overview for B2B merchants, fintech developers, and enterprises',
-      'Optimize page load performance and conversion rates across mobile and desktop devices',
+      'Communicate security standards, settlement workflows, and clear API integration',
+      'Build a structured solutions overview for B2B merchants, fintech developers, and enterprises',
+      'Optimize page performance and navigation across mobile and desktop devices',
     ],
     designDirection: {
       typography: 'Sharp modern sans-serif typography with high-contrast data callouts and clean technical hierarchy.',
@@ -275,37 +275,37 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
         { name: 'Electric Royal', hex: '#2563EB', role: 'Brand & Active Highlights' },
         { name: 'Pure White', hex: '#FFFFFF', role: 'Headlines & Card Surfaces' },
       ],
-      editorialApproach: 'High-tech architectural cards, real-time volume metrics, and interactive checkout SDK previews.',
+      editorialApproach: 'Architectural cards, volume metrics, and interactive checkout SDK previews.',
     },
     keyScreens: [
       {
         title: 'Platform Infrastructure Hero',
-        description: 'Commanding hero section introducing global payment rails and enterprise conversion benchmarks.',
+        description: 'Hero section introducing payment rails and integration benchmarks.',
         type: 'desktop',
       },
       {
         title: 'Developer API Rails & SDK Tour',
-        description: 'Interactive code snippet tour demonstrating one-line integration for payment checkouts.',
+        description: 'Interactive code snippet tour demonstrating integration for payment checkouts.',
         type: 'desktop',
       },
       {
         title: 'Merchant Analytics & Back-Office Overview',
-        description: 'Real-time settlement reporting interface showing gross volume and instant automated payouts.',
+        description: 'Settlement reporting interface showing gross volume and automated payouts.',
         type: 'tablet',
       },
       {
         title: 'Mobile Biometric Checkout Demo',
-        description: 'One-tap biometric card and transfer authorization flow for consumer payments.',
+        description: 'Biometric card and transfer authorization flow for consumer payments.',
         type: 'mobile',
       },
     ],
     responsiveFeatures: [
-      'Interactive volume calculator that dynamically scales fee tiers based on transaction turnover',
-      'Live ping latency indicator comparing gateway transaction speeds against industry averages',
+      'Interactive volume calculator that scales fee tiers based on transaction turnover',
+      'Transaction speed comparison against standard banking rails',
       'Fluid mobile navigation with instant documentation search and developer portal links',
     ],
     developmentHighlights: [
-      'Engineered with React, TypeScript, and modern CSS for lightning-fast sub-second loading',
+      'Engineered with React, TypeScript, and modern CSS for fast loading',
       'Fully responsive fluid layouts tested across all viewport breakpoints from mobile to ultra-wide',
       'Production deployment and asset caching hosted on Vercel infrastructure',
     ],
@@ -317,38 +317,38 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     id: 'ticketa',
     title: 'Ticketa',
     category: 'Event Platform & Ticketing',
-    tagline: 'High-performance ticketing web portal & live event ecosystem',
+    tagline: 'Ticketing web portal & live event ecosystem',
     description:
-      'A complete event ticketing web portal connecting attendees, organizers, and live event producers with real-time pass bookings and gate analytics.',
+      'An event ticketing web portal connecting attendees, organizers, and event producers with pass bookings and gate analytics.',
     tags: ['Web Platform', 'Event Ticketing', 'Development'],
     year: '2026',
     role: 'Lead Product Designer & Web Architect',
     tools: ['Figma', 'React', 'Tailwind CSS', 'TypeScript'],
-    client: 'Live Entertainment & Festival Ecosystem',
+    client: 'Live Entertainment Ecosystem',
     liveUrl: 'https://ticketa2-1.vercel.app/',
     thumbnailUrl: '/images/projects/ticketa/hero.jpg',
     heroImage: '/images/projects/ticketa/hero.jpg',
     accentColor: '#4F46E5', // Indigo event energy
     challenge:
-      'Ticketa required a high-capacity web platform capable of handling intense peak ticket drops without downtime, while giving attendees instantaneous QR access and organizers real-time gate telemetry.',
+      'Ticketa required a high-capacity web platform capable of handling peak ticket drops without downtime, while giving attendees instant QR access and organizers real-time gate telemetry.',
     goals: [
       'Design an effortless 3-step checkout flow for high-volume concert and festival ticket drops',
       'Provide instant animated QR passes with anti-screenshot security and offline token caching',
       'Deliver real-time gate pacing and box-office analytics for event organizers on any screen',
     ],
     designDirection: {
-      typography: 'Punchy geometric sans-serif with high-contrast stage-inspired visual hierarchy.',
+      typography: 'Punchy geometric sans-serif with high-contrast visual hierarchy.',
       colorPalette: [
         { name: 'Dark Stage', hex: '#111322', role: 'Main Canvas Background' },
         { name: 'Electric Indigo', hex: '#4F46E5', role: 'Primary Brand Action' },
         { name: 'Neon Lime', hex: '#10B981', role: 'Live Gate Status & Valid Tokens' },
       ],
-      editorialApproach: 'High-energy live event visuals, dynamic ticket preview cards, and friction-free mobile checkouts.',
+      editorialApproach: 'Live event visuals, dynamic ticket preview cards, and friction-free mobile checkouts.',
     },
     keyScreens: [
       {
         title: 'Event Lineup & Ticket Drop Hero',
-        description: 'Immersive festival discoverability featuring live countdown timers and tiered pass selection.',
+        description: 'Festival discoverability featuring live countdown timers and tiered pass selection.',
         type: 'desktop',
       },
       {
@@ -358,7 +358,7 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
       },
       {
         title: 'Dynamic QR Attendee Portal',
-        description: 'Cryptographic rotating QR pass preventing scalper screenshot fraud with offline wallet storage.',
+        description: 'Rotating QR pass preventing scalper screenshot fraud with offline wallet storage.',
         type: 'mobile',
       },
       {
@@ -369,16 +369,16 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     ],
     responsiveFeatures: [
       'Real-time seat and tiered zone selection optimized for both smartphone touchscreens and desktop viewports',
-      'Progressive offline caching for attendee passes so tickets load instantly even in crowded stadium dead zones',
+      'Progressive offline caching for attendee passes so tickets load instantly even in dead zones',
       'Dynamic ticket countdown timer with automatic cart reservation holds',
     ],
     developmentHighlights: [
-      'Built with modern React and TypeScript for maximum rendering performance during flash sales',
+      'Built with modern React and TypeScript for maximum rendering performance',
       'Tailwind CSS design system shared across attendee web portals and administrative dashboards',
-      'Deployed on Vercel with edge caching and lightning-fast asset distribution',
+      'Deployed on Vercel with edge caching and fast asset distribution',
     ],
     finalWebsiteOverview:
-      'The Ticketa web platform delivers a seamless, fraud-resistant ticketing experience trusted by festival producers and event goers across hundreds of live performances.',
+      'The Ticketa web platform delivers an event ticketing experience for organizers and attendees across live performances.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Next.js'],
   },
 ];
@@ -935,8 +935,8 @@ export const UIUX_PROJECTS: UIUXProject[] = [
   },
   {
     id: 'zibapay',
-    title: 'Ziba Innovation',
-    subtitle: 'Digital Innovation & Payment Platform',
+    title: 'Ziba Innovation — Digital Payment Platform',
+    subtitle: 'Digital Payment Platform',
     description:
       'A digital payment experience designed to support modern financial transactions and business services.',
     tags: ['Product Design', 'Fintech', 'Payments'],
