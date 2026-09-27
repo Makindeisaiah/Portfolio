@@ -21,21 +21,12 @@ export const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Dynamic nav links: on Websites page, display Websites | Product Design | About | Contact
-  const isWebsitesPage = location.pathname.startsWith('/websites');
-  const navLinks = isWebsitesPage
-    ? [
-        { label: 'Websites', path: '/websites' },
-        { label: 'Product Design', path: '/ui-ux' },
-        { label: 'About', path: '/about' },
-        { label: 'Contact', path: '/contact' },
-      ]
-    : [
-        { label: 'Work', path: '/ui-ux' },
-        { label: 'Websites', path: '/websites' },
-        { label: 'About', path: '/about' },
-        { label: 'Contact', path: '/contact' },
-      ];
+  const navLinks = [
+    { label: 'Work', path: '/ui-ux' },
+    { label: 'Websites', path: '/websites' },
+    { label: 'About', path: '/about' },
+    { label: 'Contact', path: '/contact' },
+  ];
 
   const isActive = (path: string) => {
     if (path === '/' && location.pathname === '/') return true;
