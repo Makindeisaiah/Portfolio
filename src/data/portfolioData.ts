@@ -32,7 +32,7 @@ export const PERSONAL_INFO = {
     "I believe great product design is rooted in clarity, disciplined systems, and continuous iteration driven by user feedback."
   ],
   email: 'makindeisaiah2002@gmail.com',
-  location: 'Lagos & Remote Worldwide',
+  location: 'Based in Côte d’Ivoire · Available Worldwide',
   socialLinks: {
     linkedin: 'https://linkedin.com/in/isaiah-oluwatoyin',
     behance: 'https://behance.net/isaiaholuwatoyin',

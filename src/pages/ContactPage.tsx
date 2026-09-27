@@ -15,7 +15,7 @@ export const ContactPage: React.FC = () => {
             Let’s collaborate.
           </h1>
           <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
-            Have a project in mind, need a consultation on your digital product architecture, or looking to commission a high-end website? Let’s connect.
+            Have a product, website, or digital experience in mind? Let’s talk about what you’re building and how I can help turn the idea into a clear, useful experience.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export const ContactPage: React.FC = () => {
               <span>Location & Availability</span>
             </div>
             <p className="text-sm font-bold text-neutral-900">
-              Lagos & Remote Worldwide
+              Based in Côte d’Ivoire · Available Worldwide
             </p>
           </div>
         </div>
