@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import {
-  CheckCircle,
-  HelpCircle,
-  ArrowRight,
-  Sparkles,
-  Smartphone,
-  Plus,
-  Trash2,
-  Edit2,
-  Layers,
-} from 'lucide-react';
+import { Edit2 } from 'lucide-react';
 import { CaseStudyImageArea } from '../casestudy/CaseStudyImageArea';
 
 export const PaceJetTestingIterations: React.FC = () => {
@@ -39,27 +29,6 @@ export const PaceJetTestingIterations: React.FC = () => {
     setEditingInsightIdx(null);
     try {
       localStorage.setItem('pacejet_design_observations', JSON.stringify(updated));
-    } catch {}
-  };
-
-  // 150+ Screens Dynamic Grid
-  const [extraScreens, setExtraScreens] = useState<number[]>(() => {
-    try {
-      const saved = localStorage.getItem('pacejet_extra_screens_count');
-      if (saved) {
-        const count = parseInt(saved, 10);
-        return Array.from({ length: count }, (_, i) => i + 11);
-      }
-    } catch {}
-    return [];
-  });
-
-  const handleAddScreen = () => {
-    const nextNum = (extraScreens.length > 0 ? extraScreens[extraScreens.length - 1] : 10) + 1;
-    const updated = [...extraScreens, nextNum];
-    setExtraScreens(updated);
-    try {
-      localStorage.setItem('pacejet_extra_screens_count', updated.length.toString());
     } catch {}
   };
 
@@ -172,19 +141,6 @@ export const PaceJetTestingIterations: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Review Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="testing_artifacts_board"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Design review notes / evaluation / iterations"
-            description="Documentation of design evaluation, scenario reviews, and layout evolution."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={false}
-          />
         </div>
       </section>
 
@@ -320,19 +276,6 @@ export const PaceJetTestingIterations: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Large Final Screens Collection */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="final_product_collection"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Large collection of final PaceJet screens"
-            description="A horizontal gallery showcasing the finalized high-fidelity screens across all key travel stages."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={true}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -352,63 +295,17 @@ export const PaceJetTestingIterations: React.FC = () => {
           </p>
         </div>
 
-        {/* Editorial Collage / Grid */}
-        <div className="space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => {
-              const formattedNum = num < 10 ? `0${num}` : `${num}`;
-              return (
-                <div key={num} className="space-y-2">
-                  <div className="flex items-center justify-between px-1">
-                    <span className="text-[10px] font-mono text-neutral-500 uppercase">
-                      Screen {formattedNum}
-                    </span>
-                  </div>
-                  <CaseStudyImageArea
-                    storageKey={`showcase_screen_${formattedNum}`}
-                    storagePrefix="pacejet"
-                    placeholderLabel={`[UPLOAD SCREEN ${formattedNum}]`}
-                    description={`High-fidelity screen ${formattedNum}`}
-                    aspectRatio="phone"
-                    defaultFit="contain"
-                    allowMultiple={false}
-                  />
-                </div>
-              );
-            })}
-
-            {/* Extra dynamically added screens */}
-            {extraScreens.map((num) => (
-              <div key={num} className="space-y-2">
-                <div className="flex items-center justify-between px-1">
-                  <span className="text-[10px] font-mono text-neutral-500 uppercase">
-                    Screen {num}
-                  </span>
-                </div>
-                <CaseStudyImageArea
-                  storageKey={`showcase_screen_${num}`}
-                  storagePrefix="pacejet"
-                  placeholderLabel={`[UPLOAD SCREEN ${num}]`}
-                  description={`High-fidelity screen ${num}`}
-                  aspectRatio="phone"
-                  defaultFit="contain"
-                  allowMultiple={false}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Add more screens button */}
-          <div className="flex justify-center pt-4">
-            <button
-              type="button"
-              onClick={handleAddScreen}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-neutral-300 hover:border-neutral-900 bg-white text-neutral-800 text-xs font-mono uppercase tracking-wider transition-colors shadow-2xs"
-            >
-              <Plus className="w-3.5 h-3.5 text-[#2EB732]" />
-              <span>Add More Screen Placeholders</span>
-            </button>
-          </div>
+        {/* Project Scale Multi-Screen Showcase */}
+        <div className="space-y-2 max-w-5xl mx-auto">
+          <CaseStudyImageArea
+            storageKey="pacejet_scale_showcase"
+            storagePrefix="pacejet"
+            placeholderLabel="UPLOAD SCREENS — Product scale showcase (150+ Screens)"
+            description="A curated gallery or multi-screen showcase demonstrating the scale of the product across core journeys, edge cases, and states."
+            aspectRatio="16/9"
+            defaultFit="contain"
+            allowMultiple={true}
+          />
         </div>
       </section>
     </div>

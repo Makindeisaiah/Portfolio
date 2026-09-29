@@ -12,7 +12,6 @@ import {
   Repeat,
   Gem,
 } from 'lucide-react';
-import { CaseStudyImageArea } from '../casestudy/CaseStudyImageArea';
 
 interface PaceJetTakeawaysConclusionProps {
   onOpenPrototype: () => void;
@@ -63,19 +62,6 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
               <p className="font-semibold text-neutral-900 text-xs">{rule}</p>
             </div>
           ))}
-        </div>
-
-        {/* Final Design System Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="final_design_system_showcase"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Final design system"
-            description="Large visual of the comprehensive PaceJet UI library, variable states, and responsive token sheet in Figma."
-            aspectRatio="21/9"
-            defaultFit="cover"
-            allowMultiple={false}
-          />
         </div>
       </section>
 
@@ -171,19 +157,6 @@ export const PaceJetTakeawaysConclusion: React.FC<PaceJetTakeawaysConclusionProp
           <p>
             More importantly, the project strengthened my approach to product design by showing me that strong UI is not only about visual polish. It is about creating systems that help people understand information, make decisions, and complete important tasks with confidence.
           </p>
-        </div>
-
-        {/* Conclusion Hero Screen Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="conclusion_hero_final"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Final PaceJet hero / strongest final screen"
-            description="The most striking visual presentation of PaceJet in a high-fidelity mobile frame."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={false}
-          />
         </div>
       </section>
 

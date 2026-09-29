@@ -112,13 +112,13 @@ export const PaceJetCoreFeatures: React.FC = () => {
           </div>
         </div>
 
-        {/* Discovery Image */}
-        <div className="space-y-2">
+        {/* Key Product / Booking Experience Gallery (2-4 screens) */}
+        <div className="space-y-2 max-w-5xl mx-auto">
           <CaseStudyImageArea
-            storageKey="jet_discovery_screens"
+            storageKey="booking_experience_screens"
             storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Jet cards / aircraft browsing screens"
-            description="Mobile screens showing jet listing, category filters (Light, Midsize, Heavy), and individual aircraft spec cards."
+            placeholderLabel="UPLOAD SCREENS — Key booking experience (2–4 screens: discovery, jet details, quotes)"
+            description="A compact showcase demonstrating the primary booking journey: aircraft discovery, category filtering, aircraft specifications, and transparent quotes."
             aspectRatio="16/9"
             defaultFit="contain"
             allowMultiple={true}
@@ -197,19 +197,6 @@ export const PaceJetCoreFeatures: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Flight Quote Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="flight_quote_screen"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Flight quote screen"
-            description="High-fidelity screen capture of the flight quote modal showing the itemized basic price, airport fees, and total."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -254,11 +241,11 @@ export const PaceJetCoreFeatures: React.FC = () => {
         </div>
 
         {/* Itinerary Image */}
-        <div className="space-y-2">
+        <div className="space-y-2 max-w-4xl mx-auto">
           <CaseStudyImageArea
             storageKey="itinerary_component_showcase"
             storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Itinerary component"
+            placeholderLabel="UPLOAD SCREEN — Itinerary component & flight schedule view"
             description="Detailed screen showcasing the multi-leg route timeline, FBO private lounge maps, and passenger manifest cards."
             aspectRatio="16/9"
             defaultFit="contain"
@@ -310,15 +297,15 @@ export const PaceJetCoreFeatures: React.FC = () => {
         </div>
 
         {/* Payment Image */}
-        <div className="space-y-2">
+        <div className="space-y-2 max-w-4xl mx-auto">
           <CaseStudyImageArea
             storageKey="payment_screens_showcase"
             storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Payment screens"
+            placeholderLabel="UPLOAD SCREEN — Payment flow & checkout confirmation"
             description="Mobile screens showing saved card selector, card detail input form, payment processing state, and confirmed booking receipt."
             aspectRatio="16/9"
             defaultFit="contain"
-            allowMultiple={true}
+            allowMultiple={false}
           />
         </div>
       </section>

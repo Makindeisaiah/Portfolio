@@ -58,19 +58,6 @@ export const PaceJetDesignSystem: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Design Direction Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="visual_direction_moodboard"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Visual exploration / moodboard"
-            description="Moodboard and visual benchmarks establishing the premium private aviation identity."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={false}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -137,19 +124,6 @@ export const PaceJetDesignSystem: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Typography Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="typography_system"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — PaceJet typography design-system section"
-            description="Figma typography specifications showing font hierarchy, letter-spacing, and line-height tokens."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
         </div>
       </section>
 
@@ -268,19 +242,6 @@ export const PaceJetDesignSystem: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Color Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="color_palette_system"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — PaceJet color system"
-            description="Color palette sheet from Figma demonstrating contrast compliance (WCAG AA), token names, and dark/light usages."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
         </div>
       </section>
 
@@ -465,19 +426,6 @@ export const PaceJetDesignSystem: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Components Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="component_library_showcase"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Component library"
-            description="Figma component sheet showing input states, card variants, buttons, toggles, and modals."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
         </div>
       </section>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Search,
   Users,
@@ -11,7 +11,6 @@ import {
   Check,
   RotateCcw,
 } from 'lucide-react';
-import { CaseStudyImageArea } from '../casestudy/CaseStudyImageArea';
 
 export const PaceJetDiscovery: React.FC = () => {
   // Local editable discovery findings with localStorage persistence
@@ -170,19 +169,6 @@ export const PaceJetDiscovery: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Research Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="research_discovery_board"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Competitive analysis / research board / notes"
-            description="Visual artifacts from affinity mapping, qualitative interviews, or synthesized discovery notes."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={false}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -278,19 +264,6 @@ export const PaceJetDiscovery: React.FC = () => {
             )}
           </div>
         </div>
-
-        {/* Comp Analysis Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="competitive_analysis_board"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Competitive analysis board"
-            description="Audit matrix comparing private charter booking platforms across discovery, pricing, and trip management."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -373,19 +346,6 @@ export const PaceJetDiscovery: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Persona Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="persona_artifact"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Actual PaceJet persona"
-            description="Detailed persona documentation or synthesized behavioral profile."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -422,19 +382,6 @@ export const PaceJetDiscovery: React.FC = () => {
               <p className="text-xs text-neutral-600 leading-relaxed">{stage.desc}</p>
             </div>
           ))}
-        </div>
-
-        {/* Journey Map Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="journey_map_artifact"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Actual PaceJet journey map"
-            description="Complete journey map tracking user actions, touchpoints, and emotional states."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
         </div>
       </section>
 
@@ -476,22 +423,6 @@ export const PaceJetDiscovery: React.FC = () => {
               <p className="text-[11px] text-neutral-600 leading-snug">{item.desc}</p>
             </div>
           ))}
-        </div>
-
-        {/* Wireframes Image Gallery Side-by-Side */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="wireframes_gallery"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — PaceJet wireframes"
-            description="Display several wireframes side-by-side highlighting early layout tests for search, aircraft cards, quote modal, and checkout."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={true}
-          />
-          <p className="text-xs text-neutral-600 font-mono text-center">
-            Early wireframes helped establish hierarchy and interaction before visual refinement.
-          </p>
         </div>
       </section>
     </div>

@@ -15,7 +15,6 @@ import {
   Tag,
   FileText,
 } from 'lucide-react';
-import { CaseStudyImageArea } from '../casestudy/CaseStudyImageArea';
 
 export const PaceJetStrategy: React.FC = () => {
   return (
@@ -124,19 +123,6 @@ export const PaceJetStrategy: React.FC = () => {
             </p>
           </div>
         </div>
-
-        {/* Goals Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="design_goals_direction"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Design goals / early design direction"
-            description="Concept explorations, design pillars board, or mood study establishing the early visual benchmark."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={false}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -189,19 +175,6 @@ export const PaceJetStrategy: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Figma Workspace Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="figma_workspace"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Figma workspace / design process"
-            description="Overview of the 150+ screens in Figma, design system master components, and user flow documentation."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={false}
-          />
         </div>
       </section>
 
@@ -311,19 +284,6 @@ export const PaceJetStrategy: React.FC = () => {
             </p>
           </div>
         </div>
-
-        {/* Scope Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="scope_feature_screens"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — Multiple PaceJet feature screens"
-            description="Collage showing the key feature screens: Charter, Seat, Deals, Quotes, Payments, Trips, and Profile."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={true}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -390,19 +350,6 @@ export const PaceJetStrategy: React.FC = () => {
             </p>
           </div>
         </div>
-
-        {/* IA Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="ia_diagram"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — PaceJet navigation / information architecture / user flow"
-            description="Diagram illustrating the complete information architecture and screen relationship across all 4 top-level sections."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -461,19 +408,6 @@ export const PaceJetStrategy: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Flow Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="user_flow_diagram"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — User flow diagram"
-            description="Full branching user flow diagram depicting edge-cases, return flight toggles, and seat confirmation pathways."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
         </div>
       </section>
     </div>

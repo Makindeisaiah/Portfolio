@@ -159,19 +159,6 @@ export const PaceJetHero: React.FC<PaceJetHeroProps> = ({ onOpenPrototype }) => 
             <p className="text-sm font-semibold text-neutral-900">Design Completed</p>
           </div>
         </div>
-
-        {/* Overview Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="overview_screens"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — PaceJet app overview / collection of screens"
-            description="High-level overview showing multi-screen visual harmony across charter, deals, quotes, and trip states."
-            aspectRatio="16/9"
-            defaultFit="cover"
-            allowMultiple={true}
-          />
-        </div>
       </section>
 
       {/* ========================================================================= */}
@@ -251,19 +238,6 @@ export const PaceJetHero: React.FC<PaceJetHeroProps> = ({ onOpenPrototype }) => 
               Guiding design principle for the 150+ screen restructure
             </p>
           </div>
-        </div>
-
-        {/* Challenge Image */}
-        <div className="space-y-2">
-          <CaseStudyImageArea
-            storageKey="challenge_restructuring"
-            storagePrefix="pacejet"
-            placeholderLabel="UPLOAD IMAGE — BEFORE/AFTER screens or screenshots showing areas that required restructuring"
-            description="Highlight specific areas such as the legacy flight selection, crowded aircraft specifications, or disjointed checkout progression."
-            aspectRatio="16/9"
-            defaultFit="contain"
-            allowMultiple={false}
-          />
         </div>
       </section>
     </div>
